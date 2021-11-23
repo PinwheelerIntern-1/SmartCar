@@ -21,7 +21,7 @@ void setup() {
    Serial.println("OK");
 
     // Set volume to maximum (0 to 30).
-    player.volume(20);
+    player.volume(30);
     // Play the first MP3 file on the SD card
     
   } else {

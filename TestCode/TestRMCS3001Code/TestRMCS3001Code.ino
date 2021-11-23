@@ -36,15 +36,15 @@ void setup()
 }
 void loop() 
 {
-  //Forward();
-  //delay(1000);
+  Forward();
+  delay(5000);
   spinRight();
   delay(5000);
   spinLeft();
-  //delay(50000);
-  //Backward();
-  //delay(30000);
-  //motorStop();
+  delay(5000);
+  Backward();
+  delay(5000);
+  motorStop();
   delay(5000);
 }
 void motorStop()

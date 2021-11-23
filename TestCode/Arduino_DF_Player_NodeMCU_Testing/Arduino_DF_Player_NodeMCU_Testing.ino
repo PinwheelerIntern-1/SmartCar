@@ -17,19 +17,20 @@ void setup() {
   Serial.begin(9600);
   // Init serial port for DFPlayer Mini
   softwareSerial.begin(9600);
-  nodeMCUSerial.begin(115200);
-
+  
   // Start communication with DFPlayer Mini
   if (player.begin(softwareSerial)) {
    Serial.println("OK");
 
     // Set volume to maximum (0 to 30).
-    player.volume(20);
+    player.volume(30);
     // Play the first MP3 file on the SD card
    
   } else {
     Serial.println("Connecting to DFPlayer Mini failed!");
   }
+  nodeMCUSerial.begin(115200);
+
 }
 
 void loop() 
