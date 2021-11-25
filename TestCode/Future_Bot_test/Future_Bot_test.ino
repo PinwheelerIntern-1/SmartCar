@@ -48,6 +48,7 @@ int runningSpeed = 0;
 char data_NodeMCU;
 char data_LineSensor;
 bool isObstacle=false;
+bool isAudioPlaying=false;
 
 
 void setup() 
@@ -111,15 +112,26 @@ void loop()
   {
     //Call What Need to happen when obstacle is there 
     StopTheBot();
-    DFPlayerObject.play(MOVE_ASIDE_AUDIO_ID);
+    if(!isAudioPlaying)
+    {
+    DFPlayerObject.loop(MOVE_ASIDE_AUDIO_ID);
+    isAudioPlaying=true;
+    }
     NeoPixelSolidRed();
   }
   else
   {
+    if(isAudioPlaying)
+    {
+      DFPlayerObject.stop();
+      isAudioPlaying=false;
+    }
     switch (data_NodeMCU)
     {
       case 'X'://Read Battery Level
       NeoPixelSolidBlue();
+      delay(500);
+      data_NodeMCU='0';
       break;
       
       case 'F':
@@ -141,20 +153,27 @@ void loop()
       break;
       
       case 'D':
+      if(isAudioPlaying)
+      {
+        DFPlayerObject.stop();
+      }
       DFPlayerObject.play(WELCOME_AUDIO_ID);
       break;
       
       case 'A': //add code below to turn Neopixel LED on
       NeoPixelRunningLight();
+      delay(500);
       break;
       
       case 'Z'://add code below to turn neopixel LED off
       NeoPixelDark();
+      delay(500);
       break;
       
       case 'S': 
       StopTheBot();
       NeoPixelEyeBlink();
+      delay(500);
       break;
       
       default: 
