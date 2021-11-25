@@ -4,7 +4,7 @@
 #include <SoftwareSerial.h>
 //RX Pin GPIO-14/D5
 //TX Pin GPIO-12/D6
-SoftwareSerial mSerial(2, 14);
+SoftwareSerial mSerial(2,14);
 #define Bot_Name "_H"
 //======================================WIFI CREDENTIALS for Hotspot==================================
 const char* ssid = "belkin.3ea6";
@@ -24,8 +24,8 @@ ESP8266WebServer server(80);
 HTTPClient http;
 //=========================================SETUP PART==================================================
 void setup() {
-  Serial.begin(115200);
-  mSerial.begin(115200);
+  Serial.begin(9600);
+  mSerial.begin(9600);
   WiFi.disconnect();
   pinMode(5, OUTPUT); //Pin D1 on NodeMCU
   pinMode(4, OUTPUT);  //Pin D2 on NodeMCU
@@ -66,7 +66,7 @@ void handleroot() {
 
 void Talk() {
   server.send(200, "text/plain", "Talking");
-  mSerial.println("D");
+  mSerial.write("D");
   Serial.println("D");
 }
 
@@ -78,52 +78,54 @@ void Handshake()
 void Connected()
 {
   digitalWrite(4, 1); 
+   mSerial.write('c');
   Serial.println("Connected");
 }
 void Disconnected()
 {
   digitalWrite(4, 0); 
+   mSerial.write('d');
   Serial.println("Disconnected");
 }
 
 void Stop() {
   server.send(200, "text/plain", "Stop");
-  mSerial.println("S");
+  mSerial.write('S');
   Serial.println("S");
 }
 
 void Left() {
   server.send(200, "text/plain", "LEFT");
-  mSerial.println("L");
+  mSerial.write('L');
   Serial.println("L");
 }
 void Right() {
   server.send(200, "text/plain", "Right");
-  mSerial.println("R");
+  mSerial.write('R');
   Serial.println("R");
 }
 void Forward() {
   server.send(200, "text/plain", "Forward");
-  mSerial.println("F");
+  mSerial.write('F');
   Serial.println("F");
 }
 void Backward() {
   server.send(200, "text/plain", "Backward");
-  mSerial.println("B");
+  mSerial.write('B');
   Serial.println("B");
 }
 void LEDOn() {
   server.send(200, "text/plain", "LEDOn");
-  mSerial.println("A");
+  mSerial.write('A');
   Serial.println("A");
 }
 void LEDOff() {
   server.send(200, "text/plain", "LEDOff");
-  mSerial.println("Z");
+  mSerial.write('Z');
   Serial.println("Z");
 }
 void Battery() {
-  mSerial.println("X");
+  mSerial.write('X');
   Serial.println("X");
   k = "";
   while (mSerial.available()) {

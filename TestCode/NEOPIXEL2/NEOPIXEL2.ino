@@ -19,18 +19,34 @@ void setup() {
 }
 
 void loop() {
-  Red();
+  /*Red();
  delay(1000);
   Green();
  delay(1000);
   Blue();
- delay(1000);
-  Green1();
- delay(1000);
- Blue1();
- delay(1000);
-  Red1();
- delay(1000);
+ delay(1000);*/
+  BlueRunning();
+
+ GreenRunning();
+for(int i=0;i<5;i++)
+{
+ YellowRunning();
+ delay(50);
+}
+
+for(int i=0;i<5;i++)
+{
+ Dancing();
+ delay(50);
+}
+for(int i=0;i<5;i++)
+{
+ Kwinking();
+ delay(50);
+}
+
+ 
+
   // For a set of NeoPixels the first NeoPixel is 0, second is 1, all the way up to the count of pixels minus one.
 
   // pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
@@ -77,71 +93,138 @@ void loop() {
 //  delay(delayval); // Delay for a period of time (in milliseconds).
 
 }
-void Red()
+void SolidRed()
 {
-  for (int i=0;i<16;i++)
+  for (int i=0;i<NUMPIXELS;i++)
   {
    pixels.setPixelColor(i,  pixels.Color(50,0,0));
-   delay(1);
+  
   }
    pixels.show();
-   delay(800);
-    for (int i=0;i<16;i++)
-  {
-   pixels.setPixelColor(i,  pixels.Color(70,70,70));
-   delay(1);
-  }
-   pixels.show();
+  
 }
-void Green()
+void SolidGreen()
 {
-  for (int i=0;i<16;i++)
+  for (int i=0;i<NUMPIXELS;i++)
   {
    pixels.setPixelColor(i,  pixels.Color(0,50,0));
-   delay(1);
+ 
   }
    pixels.show();
 }
-void Blue()
+void SolidBlue()
 {
-  for (int i=0;i<16;i++)
+  for (int i=0;i<NUMPIXELS;i++)
   {
    pixels.setPixelColor(i,  pixels.Color(0,0,50));
-   delay(1);
+ 
   }
    pixels.show();
 }
-void Red1()
+void BlueRunning()
 {
-  for (int i=17;i<32;i++)
+   for (int i=0;i<NUMPIXELS/2;i++)
   {
-   pixels.setPixelColor(i,  pixels.Color(50,0,0));
-   delay(1);
-  }
-   pixels.show();
-   delay(800);
-    for (int i=17;i<32;i++)
-  {
+   pixels.setPixelColor(i,  pixels.Color(0,0,50));
+    pixels.setPixelColor((NUMPIXELS/2)+i,  pixels.Color(0,0,50));
+   delay(100);
+    pixels.show();
    pixels.setPixelColor(i,  pixels.Color(0,0,0));
-   delay(1);
+    pixels.setPixelColor((NUMPIXELS/2)+i,  pixels.Color(0,0,0));
+    delay(100);
+     pixels.show();
   }
-   pixels.show();
+  
 }
-void Green1()
+void GreenRunning()
 {
-  for (int i=17;i<32;i++)
+   for (int i=0;i<NUMPIXELS/2;i++)
   {
    pixels.setPixelColor(i,  pixels.Color(0,50,0));
-   delay(1);
+    pixels.setPixelColor((NUMPIXELS/2)+i,  pixels.Color(0,0,50));
+   delay(10);
+    pixels.show();
+   pixels.setPixelColor(i,  pixels.Color(0,0,0));
+    pixels.setPixelColor((NUMPIXELS/2)+i,  pixels.Color(0,0,0));
+    delay(10);
+     pixels.show();
   }
-   pixels.show();
+  
 }
-void Blue1()
+void YellowRunning()
 {
-  for (int i=17;i<32;i++)
+   for (int i=0;i<NUMPIXELS/2;i++)
   {
-   pixels.setPixelColor(i,  pixels.Color(0,0,50));
-   delay(1);
+   pixels.setPixelColor(i,  pixels.Color(200,200,0));
+    pixels.setPixelColor((NUMPIXELS/2)+i,  pixels.Color(200,200,0));
+   delay(10);
+    pixels.show();
+   pixels.setPixelColor(i,  pixels.Color(0,0,0));
+    pixels.setPixelColor((NUMPIXELS/2)+i,  pixels.Color(0,0,0));
+    delay(10);
+     pixels.show();
+  }
+  
+}
+
+void Dancing()
+{
+   for (int i=0;i<NUMPIXELS/2;i++)
+  {
+   pixels.setPixelColor(i,  pixels.Color(200,200,0));
+    pixels.setPixelColor((NUMPIXELS/2)+i,  pixels.Color(200,200,0));
+   delay(10);
+    pixels.show();
+   pixels.setPixelColor(i,  pixels.Color(0,0,0));
+    pixels.setPixelColor((NUMPIXELS/2)+i,  pixels.Color(0,0,0));
+    delay(10);
+     pixels.show();
+  }
+   for (int i=0;i<NUMPIXELS/2;i++)
+  {
+   pixels.setPixelColor(i,  pixels.Color(0,200,200));
+    pixels.setPixelColor((NUMPIXELS/2)+i,  pixels.Color(0,200,200));
+   delay(10);
+    pixels.show();
+   pixels.setPixelColor(i,  pixels.Color(0,0,0));
+    pixels.setPixelColor((NUMPIXELS/2)+i,  pixels.Color(0,0,0));
+    delay(10);
+     pixels.show();
+  }
+  for (int i=0;i<NUMPIXELS/2;i++)
+  {
+   pixels.setPixelColor(i,  pixels.Color(200,0,200));
+    pixels.setPixelColor((NUMPIXELS/2)+i,  pixels.Color(200,0,200));
+   delay(10);
+    pixels.show();
+   pixels.setPixelColor(i,  pixels.Color(0,0,0));
+    pixels.setPixelColor((NUMPIXELS/2)+i,  pixels.Color(0,0,0));
+    delay(10);
+     pixels.show();
+  }
+ 
+  
+}
+
+void Kwinking()
+{
+   for (int i=0;i<NUMPIXELS/4;i++)
+  {
+   pixels.setPixelColor(i,  pixels.Color(200,200,0));
+    pixels.setPixelColor((NUMPIXELS/2)+i,  pixels.Color(200,200,0));
+ 
+   
+  }
+     pixels.show();
+     delay(1000);
+     for (int i=0;i<NUMPIXELS/4;i++)
+  {
+  
+  
+   pixels.setPixelColor(i,  pixels.Color(0,0,0));
+    pixels.setPixelColor((NUMPIXELS/2)+i,  pixels.Color(0,0,0));
+   
   }
    pixels.show();
+     delay(1000);
 }

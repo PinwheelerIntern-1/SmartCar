@@ -20,6 +20,8 @@
 #define SPIN_LEFT_AUDIO_ID 9
 #define SPIN_RIGHT_AUDIO_ID 10
 #define WELCOME_AUDIO_ID 11
+#define NETWORK_CONNECTED_AUDIO 12
+#define NETWORK_DISCONNECTED_AUDIO 13
 
 //Constant Setup Values
 short leftMotorSpeed = 600;
@@ -68,9 +70,9 @@ void setup()
   
   LineSensorSerial.begin(9600);
   
-  NodeMCUSerial.begin(115200);
+  NodeMCUSerial.begin(9600);
   
-  Serial.begin(115200);
+  Serial.begin(9600);
 
   //Calling Initialize Function from The Object
   ringLedNeoPixels.begin(); // This initializes the NeoPixel library.
@@ -157,11 +159,11 @@ void loop()
       {
         DFPlayerObject.stop();
       }
-      DFPlayerObject.play(WELCOME_AUDIO_ID);
+      DFPlayerObject.play(GOING_REVERSE_AUDIO_ID);
       break;
       
       case 'A': //add code below to turn Neopixel LED on
-      NeoPixelRunningLight();
+      NeoPixelDancing();
       delay(500);
       break;
       
@@ -172,6 +174,18 @@ void loop()
       
       case 'S': 
       StopTheBot();
+      NeoPixelEyeBlink();
+      delay(500);
+      break;
+
+      case 'c': 
+      DFPlayerObject.play(GREET_AUDIO_ID);
+      NeoPixelEyeBlink();
+      delay(500);
+      break;
+
+      case 'd': 
+      DFPlayerObject.play(MUSIC_AUDIO_ID);
       NeoPixelEyeBlink();
       delay(500);
       break;
@@ -297,14 +311,7 @@ void NeoPixelSolidBlue()
   }
    ringLedNeoPixels.show();
 }
-void NeoPixelEyeBlink()
-{
-  for (int i=0;i<NeoPixelLedCount;i++)
-  {
-   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(0,0,50));
-  }
-   ringLedNeoPixels.show();
-}
+
 void NeoPixelRunningLight()
 {
   for (int i=0;i<NeoPixelLedCount;i++)
@@ -328,4 +335,113 @@ void NeoPixelWhiteBlink()
    ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(0,0,50));
   }
    ringLedNeoPixels.show();
+   delay(500);
+   for (int i=0;i<NeoPixelLedCount;i++)
+  {
+   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(0,0,0));
+  }
+   ringLedNeoPixels.show();
+}
+void NeoPixelBlueRunning()
+{
+   for (int i=0;i<NeoPixelLedCount/2;i++)
+  {
+   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(0,0,50));
+    ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(0,0,50));
+   delay(100);
+    ringLedNeoPixels.show();
+   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(0,0,0));
+    ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(0,0,0));
+    delay(100);
+     ringLedNeoPixels.show();
+  }
+  
+}
+void NeoPixelGreenRunning()
+{
+   for (int i=0;i<NeoPixelLedCount/2;i++)
+  {
+   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(0,50,0));
+    ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(0,0,50));
+   delay(10);
+    ringLedNeoPixels.show();
+   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(0,0,0));
+    ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(0,0,0));
+    delay(10);
+     ringLedNeoPixels.show();
+  }
+  
+}
+void NeoPixelYellowRunning()
+{
+   for (int i=0;i<NeoPixelLedCount/2;i++)
+  {
+   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(200,200,0));
+    ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(200,200,0));
+   delay(10);
+    ringLedNeoPixels.show();
+   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(0,0,0));
+    ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(0,0,0));
+    delay(10);
+     ringLedNeoPixels.show();
+  }
+  
+}
+
+void NeoPixelDancing()
+{
+   for (int i=0;i<NeoPixelLedCount/2;i++)
+  {
+   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(200,200,0));
+    ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(200,200,0));
+   delay(10);
+    ringLedNeoPixels.show();
+   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(0,0,0));
+    ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(0,0,0));
+    delay(10);
+     ringLedNeoPixels.show();
+  }
+   for (int i=0;i<NeoPixelLedCount/2;i++)
+  {
+   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(0,200,200));
+    ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(0,200,200));
+   delay(10);
+    ringLedNeoPixels.show();
+   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(0,0,0));
+    ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(0,0,0));
+    delay(10);
+     ringLedNeoPixels.show();
+  }
+  for (int i=0;i<NeoPixelLedCount/2;i++)
+  {
+   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(200,0,200));
+    ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(200,0,200));
+   delay(10);
+    ringLedNeoPixels.show();
+   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(0,0,0));
+    ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(0,0,0));
+    delay(10);
+     ringLedNeoPixels.show();
+  }
+ 
+  
+}
+
+void NeoPixelEyeBlink()
+{
+  for (int i=0;i<NeoPixelLedCount/4;i++)
+  {
+   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(200,200,0));
+    ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(200,200,0));
+  }
+     ringLedNeoPixels.show();
+     delay(500);
+     for (int i=0;i<NeoPixelLedCount/4;i++)
+  {
+   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(0,0,0));
+   ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(0,0,0));
+   
+  }
+   ringLedNeoPixels.show();
+     delay(1000);
 }
