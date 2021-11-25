@@ -111,7 +111,7 @@ void loop()
   {
     //Call What Need to happen when obstacle is there 
     StopTheBot();
-    DFPlayerObject.loop(MOVE_ASIDE_AUDIO_ID);
+    DFPlayerObject.play(MOVE_ASIDE_AUDIO_ID);
     NeoPixelSolidRed();
   }
   else
