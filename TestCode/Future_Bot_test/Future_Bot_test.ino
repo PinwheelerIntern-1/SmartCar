@@ -12,21 +12,34 @@
 #define MOVE_ASIDE_AUDIO_ID 1
 #define BATTERY_LOW_AUDIO_ID 2
 #define GREET_AUDIO_ID 3
-#define MUSIC_AUDIO_ID 4
-#define GOING_FORWARD_AUDIO_ID 5
-#define GOING_REVERSE_AUDIO_ID 6
-#define TURN_LEFT_AUDIO_ID 7
-#define TURN_RIGHT_AUDIO_ID 8
-#define SPIN_LEFT_AUDIO_ID 9
-#define SPIN_RIGHT_AUDIO_ID 10
-#define WELCOME_AUDIO_ID 11
-#define NETWORK_CONNECTED_AUDIO 12
-#define NETWORK_DISCONNECTED_AUDIO 13
+#define GOING_FORWARD_AUDIO_ID 4
+#define GOING_REVERSE_AUDIO_ID 5
+#define TURN_LEFT_AUDIO_ID 6
+#define TURN_RIGHT_AUDIO_ID 7
+#define SPIN_LEFT_AUDIO_ID 8
+#define SPIN_RIGHT_AUDIO_ID 9
+#define WELCOME_AUDIO_ID 10
+#define NETWORK_CONNECTED_AUDIO 11
+#define NETWORK_DISCONNECTED_AUDIO 12
+#define MUSIC_JINGLE_AUDIO_ID 13
+#define MUSIC_CARAVAN_AUDIO_ID 14
+
+#define AUDIO_FILE1 14
+#define AUDIO_FILE2 15
+#define AUDIO_FILE3 16
+#define AUDIO_FILE4 19
+#define AUDIO_FILE5 20
+#define AUDIO_FILE6 29
+#define AUDIO_FILE7 30
+#define AUDIO_FILE8 31
+
+
 
 //Constant Setup Values
 short leftMotorSpeed = 600;
 short rightMotorSpeed = 600;
 short spinSpeed = 800;
+short batteryLow=30;
 
 uint8_t LeftMotorSlaveId = 1;   //Slave ID of LEFT Drive
 uint8_t RightMotorSlaveId = 1;   //Slave ID of RIGHT Drive
@@ -87,23 +100,27 @@ void setup()
   modbusMasterRightMotorNode.postTransmission(postTransmission);
 
  //Setting Initial Values
-  DFPlayerObject.volume(15);  //Set volume value. From 0 to 30  
+  DFPlayerObject.volume(30);  //Set volume value. From 0 to 30  
   digitalWrite(MODBUS_DATA_TRANSACTION_PIN_LEFT, 0);
   digitalWrite(MODBUS_DATA_TRANSACTION_PIN_RIGHT, 0); 
-  
+  DFPlayerObject.play(WELCOME_AUDIO_ID);
+  delay(2000);
 }
 
 void loop() 
 {
   NeoPixelDark();
   isObstacle=digitalRead(OBSTACLE_SENSOR_NANDGATE);
-  if(NodeMCUSerial.available())
+  
+  NodeMCUSerial.listen();
+  while(NodeMCUSerial.available()>0)
   {
     Serial.println("Got Data From NodeMCU");
     data_NodeMCU=NodeMCUSerial.read();
     Serial.println(data_NodeMCU);
   }
-  if(LineSensorSerial.available())
+  LineSensorSerial.listen();
+  while(LineSensorSerial.available()>0)
   {
     Serial.println("Got Data From LineSensor");
     data_LineSensor=LineSensorSerial.read();
@@ -131,26 +148,39 @@ void loop()
     switch (data_NodeMCU)
     {
       case 'X'://Read Battery Level
+      if(GetBatteryVoltage())
       NeoPixelSolidBlue();
-      delay(500);
-      data_NodeMCU='0';
+     
+      else
+      {
+        DFPlayerObject.play(BATTERY_LOW_AUDIO_ID);
+      }
+     
+     
       break;
       
       case 'F':
+      DFPlayerObject.play(GOING_FORWARD_AUDIO_ID);
       NeoPixelSolidGreen();
       ForwardTheBot(); 
+     
       break;
 
       case 'B':
+      DFPlayerObject.play(GOING_REVERSE_AUDIO_ID);
       NeoPixelSolidBlue();
       ReverseTheBot(); 
       break;
       
       case 'R': 
+      DFPlayerObject.play(TURN_RIGHT_AUDIO_ID);
+      NeoPixelRightWhite();
       SpinRightTheBot(); 
       break;
       
       case 'L': 
+      DFPlayerObject.play(TURN_LEFT_AUDIO_ID);
+      NeoPixelLeftWhite();
       SpinLeftTheBot(); 
       break;
       
@@ -159,41 +189,46 @@ void loop()
       {
         DFPlayerObject.stop();
       }
-      DFPlayerObject.play(GOING_REVERSE_AUDIO_ID);
+      DFPlayerObject.play(MUSIC_JINGLE_AUDIO_ID);
       break;
       
       case 'A': //add code below to turn Neopixel LED on
+      DFPlayerObject.play(MUSIC_JINGLE_AUDIO_ID);
       NeoPixelDancing();
-      delay(500);
+     
       break;
       
       case 'Z'://add code below to turn neopixel LED off
+      DFPlayerObject.stop();
       NeoPixelDark();
-      delay(500);
+      
       break;
       
       case 'S': 
       StopTheBot();
       NeoPixelEyeBlink();
-      delay(500);
+    
       break;
 
       case 'c': 
-      DFPlayerObject.play(GREET_AUDIO_ID);
+      DFPlayerObject.play(NETWORK_CONNECTED_AUDIO);
       NeoPixelEyeBlink();
-      delay(500);
+   
       break;
 
       case 'd': 
-      DFPlayerObject.play(MUSIC_AUDIO_ID);
+      DFPlayerObject.play(NETWORK_DISCONNECTED_AUDIO);
       NeoPixelEyeBlink();
-      delay(500);
+     
       break;
       
       default: 
       data_NodeMCU='0'; 
       break;
+      
   }
+   data_NodeMCU='0'; 
+   delay(10);
  }
 }
 
@@ -209,7 +244,7 @@ void StopTheBot()
   modbusMasterRightMotorNode.Run_Motor(RightMotorSlaveId, 515); // CCW-521, stop-512, brake-515, CW-513
   
 }
-void ForwardTheBot()
+void ReverseTheBot()
 {
   Serial.println("Forward");
   setMotorSpeed(leftMotorSpeed, rightMotorSpeed);
@@ -219,7 +254,7 @@ void ForwardTheBot()
   delay(1);
   
 }
-void ReverseTheBot()
+void ForwardTheBot()
 {
   Serial.println("Backward");
   modbusMasterLeftMotorNode.Run_Motor(LeftMotorSlaveId, 521); // CCW-521, stop-512, brake-515, CW-513
@@ -295,6 +330,22 @@ void NeoPixelSolidRed()
    ringLedNeoPixels.show();
 }
 
+void NeoPixelRightWhite()
+{
+  for (int i=0;i<NeoPixelLedCount/2;i++)
+  {
+   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(200,200,200));
+  }
+   ringLedNeoPixels.show();
+}
+void NeoPixelLeftWhite()
+{
+  for (int i=NeoPixelLedCount/2;i<NeoPixelLedCount;i++)
+  {
+   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(200,200,200));
+  }
+   ringLedNeoPixels.show();
+}
 void NeoPixelSolidGreen()
 {
   for (int i=0;i<NeoPixelLedCount;i++)
@@ -444,4 +495,26 @@ void NeoPixelEyeBlink()
   }
    ringLedNeoPixels.show();
      delay(1000);
+}
+
+bool GetBatteryVoltage() {
+  // read the input on analog pin 0:
+  float voltage;
+  int voltageDigital = analogRead(VOLTAGE_READING_PIN);
+  // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5.0V):
+  voltage = (voltageDigital * (5.0 / 1024.0) ) / 0.09;
+  voltage = voltage - 2; // add on for calibration only for AB2
+  float batteryPercentage = (voltage - 19.2) / 0.074; // full charge 26.6V
+  if (voltage < 19.2)
+  {
+    NodeMCUSerial.print("LOW BATTERY : " + String(voltage) + "V, " + String(batteryPercentage) + "%");
+    return false;
+    //Serial.print("LOW BATTERY : " + String(voltage) + "V, " + String(batteryPercentage) + "%");
+  }
+  else 
+  {
+    NodeMCUSerial.print("Battery : " + String(voltage) + "V, " + String(batteryPercentage) + "%");
+    return true;
+    //Serial.print("Battery : " + String(voltage) + "V, " + String(batteryPercentage) + "%");
+  }
 }
