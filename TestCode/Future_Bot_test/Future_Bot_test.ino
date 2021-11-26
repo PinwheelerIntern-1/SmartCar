@@ -36,8 +36,8 @@
 
 
 //Constant Setup Values
-short leftMotorSpeed = 600;
-short rightMotorSpeed = 600;
+short leftMotorSpeed = 800;
+short rightMotorSpeed = 800;
 short spinSpeed = 800;
 short batteryLow=30;
 
@@ -112,14 +112,14 @@ void loop()
   NeoPixelDark();
   isObstacle=digitalRead(OBSTACLE_SENSOR_NANDGATE);
   
-  NodeMCUSerial.listen();
+  //NodeMCUSerial.listen();
   while(NodeMCUSerial.available()>0)
   {
     Serial.println("Got Data From NodeMCU");
     data_NodeMCU=NodeMCUSerial.read();
     Serial.println(data_NodeMCU);
   }
-  LineSensorSerial.listen();
+  //LineSensorSerial.listen();
   while(LineSensorSerial.available()>0)
   {
     Serial.println("Got Data From LineSensor");
@@ -163,7 +163,7 @@ void loop()
       DFPlayerObject.play(GOING_FORWARD_AUDIO_ID);
       NeoPixelSolidGreen();
       ForwardTheBot(); 
-     
+      
       break;
 
       case 'B':
@@ -194,7 +194,10 @@ void loop()
       
       case 'A': //add code below to turn Neopixel LED on
       DFPlayerObject.play(MUSIC_JINGLE_AUDIO_ID);
+      for(int i=0;i<10;i++)
+      {
       NeoPixelDancing();
+      }
      
       break;
       
