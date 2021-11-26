@@ -59,9 +59,9 @@ void setup() {
   server.on("/3", Audio3);
   server.on("/4", Audio4);
   server.on("/5", Audio5);
-  server.on("/6", Audio3);
-  server.on("/7", Audio4);
-  server.on("/8", Audio5);
+  server.on("/6", Audio6);
+  server.on("/7", Audio7);
+  server.on("/8", Audio8);
 
   server.begin();
 }
@@ -72,55 +72,55 @@ void handleroot() {
 //===================================AutoBot control page===========================================
 
 void Audio1() {
-  server.send(200, "text/plain", "Talking");
-  mSerial.write('1')
+  server.send(200, "text/plain", "Audio1");
+  mSerial.write('1');
   Serial.println("1");
 }
 
 void Audio2() {
-  server.send(200, "text/plain", "Talking");
-  mSerial.write('2')
-  Serial.println("1");
+  server.send(200, "text/plain", "Audio2");
+  mSerial.write('2');
+  Serial.println("2");
 }
 
 
 void Audio3() {
-  server.send(200, "text/plain", "Talking");
-  mSerial.write('3')
-  Serial.println("1");
+  server.send(200, "text/plain", "Audio3");
+  mSerial.write('3');
+  Serial.println("3");
 }
 
 
 void Audio4() {
-  server.send(200, "text/plain", "Talking");
-  mSerial.write('4')
-  Serial.println("1");
+  server.send(200, "text/plain", "Audio4");
+  mSerial.write('4');
+  Serial.println("4");
 }
 
 
 void Audio5() {
-  server.send(200, "text/plain", "Talking");
-  mSerial.write('5')
-  Serial.println("1");
+  server.send(200, "text/plain", "Audio5");
+  mSerial.write('5');
+  Serial.println("5");
 }
 void Audio6() {
-  server.send(200, "text/plain", "Talking");
-  mSerial.write('6')
-  Serial.println("1");
+  server.send(200, "text/plain", "Audio6");
+  mSerial.write('6');
+  Serial.println("6");
 }
 
 
 void Audio7() {
-  server.send(200, "text/plain", "Talking");
-  mSerial.write('7')
-  Serial.println("1");
+  server.send(200, "text/plain", "Audio7");
+  mSerial.write('7');
+  Serial.println("7");
 }
 
 
 void Audio8() {
-  server.send(200, "text/plain", "Talking");
-  mSerial.write('8')
-  Serial.println("1");
+  server.send(200, "text/plain", "Audio8");
+  mSerial.write('8');
+  Serial.println("8");
 }
 
 
