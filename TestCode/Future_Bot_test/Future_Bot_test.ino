@@ -224,6 +224,43 @@ void loop()
       NeoPixelEyeBlink();
      
       break;
+	  case '1': 
+      DFPlayerObject.play(AUDIO_FILE1);
+      NeoPixelEyeBlink();
+     
+      break;
+	  case '1': 
+      DFPlayerObject.play(AUDIO_FILE1);
+      NeoPixelEyeBlink();
+      break;
+	  case '2': 
+      DFPlayerObject.play(AUDIO_FILE2);
+      NeoPixelEyeBlink();
+      break;
+	  case '3': 
+      DFPlayerObject.play(AUDIO_FILE3);
+      NeoPixelEyeBlink();
+      break;
+	  case '4': 
+      DFPlayerObject.play(AUDIO_FILE4);
+      NeoPixelEyeBlink();
+      break;
+	  case '5': 
+      DFPlayerObject.play(AUDIO_FILE5);
+      NeoPixelEyeBlink();
+      break;
+	  case '6': 
+      DFPlayerObject.play(AUDIO_FILE6);
+      NeoPixelEyeBlink();
+      break;
+	  case '7': 
+      DFPlayerObject.play(AUDIO_FILE7);
+      NeoPixelEyeBlink();
+      break;
+	  case '8': 
+      DFPlayerObject.play(AUDIO_FILE8);
+      NeoPixelEyeBlink();
+      break;
       
       default: 
       data_NodeMCU='0'; 
@@ -483,21 +520,24 @@ void NeoPixelDancing()
 
 void NeoPixelEyeBlink()
 {
-  for (int i=0;i<NeoPixelLedCount/4;i++)
-  {
-   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(200,200,0));
-    ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(200,200,0));
-  }
-     ringLedNeoPixels.show();
-     delay(500);
-     for (int i=0;i<NeoPixelLedCount/4;i++)
-  {
-   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(0,0,0));
-   ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(0,0,0));
-   
-  }
-   ringLedNeoPixels.show();
-     delay(1000);
+	for(int k=0;k<2;k++)
+	{
+	  for (int i=0;i<NeoPixelLedCount/4;i++)
+	  {
+	   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(200,200,0));
+		ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(200,200,0));
+	  }
+		 ringLedNeoPixels.show();
+		 delay(500);
+		 for (int i=0;i<NeoPixelLedCount/4;i++)
+	  {
+	   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(0,0,0));
+	   ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(0,0,0));
+	   
+	  }
+	   ringLedNeoPixels.show();
+		 delay(500);
+	}
 }
 
 bool GetBatteryVoltage() {

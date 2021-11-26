@@ -54,7 +54,14 @@ void setup() {
   server.on("/LEDOn", LEDOn);
   server.on("/LEDOff", LEDOff);
   server.on("/Stop", Stop);
-  server.on("/Talk", Talk);
+  server.on("/1", Audio1);
+  server.on("/2", Audio2);
+  server.on("/3", Audio3);
+  server.on("/4", Audio4);
+  server.on("/5", Audio5);
+  server.on("/6", Audio3);
+  server.on("/7", Audio4);
+  server.on("/8", Audio5);
 
   server.begin();
 }
@@ -64,11 +71,58 @@ void handleroot() {
 }
 //===================================AutoBot control page===========================================
 
-void Talk() {
+void Audio1() {
   server.send(200, "text/plain", "Talking");
-  mSerial.write("D");
-  Serial.println("D");
+  mSerial.write('1')
+  Serial.println("1");
 }
+
+void Audio2() {
+  server.send(200, "text/plain", "Talking");
+  mSerial.write('2')
+  Serial.println("1");
+}
+
+
+void Audio3() {
+  server.send(200, "text/plain", "Talking");
+  mSerial.write('3')
+  Serial.println("1");
+}
+
+
+void Audio4() {
+  server.send(200, "text/plain", "Talking");
+  mSerial.write('4')
+  Serial.println("1");
+}
+
+
+void Audio5() {
+  server.send(200, "text/plain", "Talking");
+  mSerial.write('5')
+  Serial.println("1");
+}
+void Audio6() {
+  server.send(200, "text/plain", "Talking");
+  mSerial.write('6')
+  Serial.println("1");
+}
+
+
+void Audio7() {
+  server.send(200, "text/plain", "Talking");
+  mSerial.write('7')
+  Serial.println("1");
+}
+
+
+void Audio8() {
+  server.send(200, "text/plain", "Talking");
+  mSerial.write('8')
+  Serial.println("1");
+}
+
 
 void Handshake()
 {
