@@ -224,11 +224,7 @@ void loop()
       NeoPixelEyeBlink();
      
       break;
-	  case '1': 
-      DFPlayerObject.play(AUDIO_FILE1);
-      NeoPixelEyeBlink();
-     
-      break;
+	 
 	  case '1': 
       DFPlayerObject.play(AUDIO_FILE1);
       NeoPixelEyeBlink();
