@@ -5041,12 +5041,10 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY12" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="SUPPLY14" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="SUPPLY2" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="J1" library="SparkFun-Connectors" deviceset="CONN_02" device="5MM" value="6V-12V"/>
-<part name="SUPPLY10" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="SUPPLY13" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="LED1" library="adafruit" deviceset="LED" device="CHIPLED_0805" value="Red"/>
 <part name="R1" library="adafruit" deviceset="R-US_" device="M0805" value="330E"/>
@@ -5079,23 +5077,19 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <instance part="SUPPLY12" gate="GND" x="-83.82" y="127" smashed="yes" rot="R180">
 <attribute name="VALUE" x="-81.915" y="130.175" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SUPPLY14" gate="G$1" x="-71.12" y="116.84" smashed="yes" rot="R270">
-<attribute name="VALUE" x="-65.405" y="123.825" size="1.778" layer="96" rot="R270"/>
-</instance>
 <instance part="SUPPLY2" gate="G$1" x="-22.86" y="106.68" smashed="yes">
 <attribute name="VALUE" x="-24.765" y="89.535" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY3" gate="GND" x="-15.24" y="93.98" smashed="yes">
-<attribute name="VALUE" x="-17.145" y="90.805" size="1.778" layer="96"/>
+<instance part="SUPPLY3" gate="GND" x="-10.16" y="93.98" smashed="yes">
+<attribute name="VALUE" x="-12.065" y="90.805" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY1" gate="G$1" x="-96.52" y="116.84" smashed="yes" rot="R90">
-<attribute name="VALUE" x="-99.695" y="114.935" size="1.778" layer="96" rot="R90"/>
+<instance part="SUPPLY1" gate="G$1" x="-106.68" y="116.84" smashed="yes" rot="R90">
+<attribute name="VALUE" x="-109.855" y="114.935" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="J1" gate="G$1" x="-96.52" y="104.14" smashed="yes" rot="R180">
 <attribute name="VALUE" x="-93.98" y="108.966" size="1.778" layer="96" font="vector" rot="R180"/>
 <attribute name="NAME" x="-93.98" y="98.552" size="1.778" layer="95" font="vector" rot="R180"/>
 </instance>
-<instance part="SUPPLY10" gate="G$1" x="-104.14" y="106.68" smashed="yes"/>
 <instance part="SUPPLY13" gate="GND" x="-104.14" y="99.06" smashed="yes">
 <attribute name="VALUE" x="-106.045" y="95.885" size="1.778" layer="96"/>
 </instance>
@@ -5199,24 +5193,16 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <nets>
 <net name="VCC" class="0">
 <segment>
-<pinref part="J1" gate="G$1" pin="1"/>
-<pinref part="SUPPLY10" gate="G$1" pin="VCC"/>
-</segment>
-<segment>
 <pinref part="R1" gate="G$1" pin="1"/>
 <pinref part="SUPPLY15" gate="G$1" pin="VCC"/>
-</segment>
-<segment>
-<pinref part="SUPPLY14" gate="G$1" pin="VCC"/>
-<pinref part="IC2" gate="A1" pin="VI"/>
 </segment>
 <segment>
 <pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
 <pinref part="IC2" gate="A1" pin="VO"/>
 <pinref part="5V" gate="-1" pin="S"/>
 <wire x1="-104.14" y1="121.92" x2="-104.14" y2="116.84" width="0.1524" layer="91"/>
+<junction x="-104.14" y="116.84"/>
 <wire x1="-104.14" y1="116.84" x2="-93.98" y2="116.84" width="0.1524" layer="91"/>
-<junction x="-93.98" y="116.84"/>
 </segment>
 <segment>
 <pinref part="RS485MODULE2" gate="G$1" pin="VCC"/>
@@ -5252,8 +5238,9 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <pinref part="RS485MODULE2" gate="G$1" pin="GND"/>
 <pinref part="SUPPLY3" gate="GND" pin="GND"/>
 <pinref part="RS485OUTCONNECTEDTOD-D+GND" gate="-3" pin="S"/>
-<wire x1="-15.24" y1="96.52" x2="12.7" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="-15.24" y1="96.52" x2="-22.86" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="96.52" x2="12.7" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="96.52" x2="-22.86" y2="96.52" width="0.1524" layer="91"/>
+<junction x="-10.16" y="96.52"/>
 </segment>
 <segment>
 <pinref part="RS485MODULE1" gate="G$1" pin="GND"/>
@@ -5385,13 +5372,19 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <wire x1="-73.66" y1="86.36" x2="-73.66" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
+<net name="N$16" class="0">
+<segment>
+<pinref part="IC2" gate="A1" pin="VI"/>
+<wire x1="-73.66" y1="116.84" x2="-68.58" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="-68.58" y1="116.84" x2="-68.58" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="-68.58" y1="109.22" x2="-104.14" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$1" pin="1"/>
+<wire x1="-104.14" y1="109.22" x2="-104.14" y2="104.14" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
-<errors>
-<approved hash="106,1,-68.58,99.06,N$5,,,,,"/>
-<approved hash="106,1,-68.58,78.74,N$11,,,,,"/>
-</errors>
 </schematic>
 </drawing>
 <compatibility>
