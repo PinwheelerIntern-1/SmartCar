@@ -669,21 +669,21 @@ design rules under a new name.</description>
 <attribute name="NAME" x="31.25" y="70.675" size="1.016" layer="25" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="27.1775" y="69.9325" size="1.016" layer="27" ratio="10"/>
 </element>
-<element name="R2" library="adafruit" package="M0805" value="1k" x="2.54" y="21.59" smashed="yes">
-<attribute name="NAME" x="1.524" y="22.606" size="1.27" layer="25"/>
-<attribute name="VALUE" x="1.524" y="19.304" size="1.27" layer="27"/>
+<element name="R2" library="adafruit" package="M0805" value="1k" x="7.62" y="30.48" smashed="yes">
+<attribute name="NAME" x="6.604" y="31.496" size="1.27" layer="25"/>
+<attribute name="VALUE" x="6.604" y="28.194" size="1.27" layer="27"/>
 </element>
-<element name="R3" library="adafruit" package="M0805" value="1k" x="2.54" y="15.24" smashed="yes">
-<attribute name="NAME" x="1.524" y="16.256" size="1.27" layer="25"/>
-<attribute name="VALUE" x="1.524" y="12.954" size="1.27" layer="27"/>
+<element name="R3" library="adafruit" package="M0805" value="1k" x="7.62" y="27.94" smashed="yes">
+<attribute name="NAME" x="6.604" y="28.956" size="1.27" layer="25"/>
+<attribute name="VALUE" x="6.604" y="25.654" size="1.27" layer="27"/>
 </element>
-<element name="R4" library="adafruit" package="M0805" value="1k" x="2.54" y="8.89" smashed="yes">
-<attribute name="NAME" x="1.524" y="9.906" size="1.27" layer="25"/>
-<attribute name="VALUE" x="1.524" y="6.604" size="1.27" layer="27"/>
+<element name="R4" library="adafruit" package="M0805" value="1k" x="12.7" y="27.94" smashed="yes">
+<attribute name="NAME" x="11.684" y="28.956" size="1.27" layer="25"/>
+<attribute name="VALUE" x="11.684" y="25.654" size="1.27" layer="27"/>
 </element>
-<element name="R5" library="adafruit" package="M0805" value="1k" x="2.54" y="2.54" smashed="yes">
-<attribute name="NAME" x="1.524" y="3.556" size="1.27" layer="25"/>
-<attribute name="VALUE" x="1.524" y="0.254" size="1.27" layer="27"/>
+<element name="R5" library="adafruit" package="M0805" value="1k" x="17.78" y="27.94" smashed="yes">
+<attribute name="NAME" x="16.764" y="28.956" size="1.27" layer="25"/>
+<attribute name="VALUE" x="16.764" y="25.654" size="1.27" layer="27"/>
 </element>
 </elements>
 <signals>
@@ -791,13 +791,13 @@ design rules under a new name.</description>
 <wire x1="6.4008" y1="46.6344" x2="9.144" y2="49.3776" width="0.6096" layer="1"/>
 <wire x1="13.716" y1="49.3776" x2="13.97" y2="49.53" width="0.6096" layer="1"/>
 <contactref element="R3" pad="2"/>
-<wire x1="3.49" y1="15.24" x2="6.4008" y2="46.6344" width="0" layer="19" extent="1-1"/>
+<wire x1="8.57" y1="27.94" x2="6.4008" y2="46.6344" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$3">
 <contactref element="RS485MODULE2" pad="J1.4"/>
 <wire x1="11.43" y1="57.15" x2="13.97" y2="57.15" width="0.6096" layer="1"/>
 <contactref element="R2" pad="2"/>
-<wire x1="3.49" y1="21.59" x2="11.43" y2="57.15" width="0" layer="19" extent="1-1"/>
+<wire x1="8.57" y1="30.48" x2="11.43" y2="57.15" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$4">
 <contactref element="RS485MODULE2" pad="J2.2"/>
@@ -829,14 +829,14 @@ design rules under a new name.</description>
 <wire x1="6.4008" y1="36.576" x2="8.6868" y2="34.29" width="0.6096" layer="1"/>
 <wire x1="6.4008" y1="36.576" x2="6.35" y2="36.83" width="0.6096" layer="1"/>
 <contactref element="R5" pad="1"/>
-<wire x1="1.59" y1="2.54" x2="8.6868" y2="34.29" width="0" layer="19" extent="1-1"/>
+<wire x1="16.83" y1="27.94" x2="8.6868" y2="34.29" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$10">
 <contactref element="RS232IN" pad="3"/>
 <wire x1="6.4008" y1="42.0624" x2="13.716" y2="42.0624" width="0.6096" layer="1"/>
 <wire x1="6.4008" y1="42.0624" x2="6.35" y2="41.91" width="0.6096" layer="1"/>
 <contactref element="R4" pad="1"/>
-<wire x1="1.59" y1="8.89" x2="6.35" y2="41.91" width="0" layer="19" extent="1-1"/>
+<wire x1="11.75" y1="27.94" x2="6.35" y2="41.91" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$12">
 <contactref element="RS485MODULE1" pad="J2.2"/>
@@ -861,22 +861,22 @@ design rules under a new name.</description>
 <signal name="N$5">
 <contactref element="RS232IN" pad="5"/>
 <contactref element="R3" pad="1"/>
-<wire x1="1.59" y1="15.24" x2="6.35" y2="46.99" width="0" layer="19" extent="1-1"/>
+<wire x1="6.67" y1="27.94" x2="6.35" y2="46.99" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$11">
 <contactref element="RS232IN" pad="7"/>
 <contactref element="R2" pad="1"/>
-<wire x1="1.59" y1="21.59" x2="6.35" y2="52.07" width="0" layer="19" extent="1-1"/>
+<wire x1="6.67" y1="30.48" x2="6.35" y2="52.07" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$15">
 <contactref element="RS485MODULE1" pad="J1.1"/>
 <contactref element="R5" pad="2"/>
-<wire x1="3.49" y1="2.54" x2="13.97" y2="34.29" width="0" layer="19" extent="1-1"/>
+<wire x1="18.73" y1="27.94" x2="13.97" y2="34.29" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$14">
 <contactref element="RS485MODULE1" pad="J1.4"/>
 <contactref element="R4" pad="2"/>
-<wire x1="3.49" y1="8.89" x2="13.97" y2="41.91" width="0" layer="19" extent="1-1"/>
+<wire x1="13.65" y1="27.94" x2="13.97" y2="41.91" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
