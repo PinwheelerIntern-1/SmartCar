@@ -5126,8 +5126,8 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <instance part="RS232IN" gate="-4" x="-71.12" y="91.44" smashed="yes" rot="R180">
 <attribute name="NAME" x="-73.66" y="92.202" size="1.524" layer="95" rot="R180"/>
 </instance>
-<instance part="RS232IN" gate="-5" x="-83.82" y="96.52" smashed="yes" rot="R180">
-<attribute name="NAME" x="-86.36" y="97.282" size="1.524" layer="95" rot="R180"/>
+<instance part="RS232IN" gate="-5" x="-86.36" y="96.52" smashed="yes" rot="R180">
+<attribute name="NAME" x="-88.9" y="97.282" size="1.524" layer="95" rot="R180"/>
 </instance>
 <instance part="RS232IN" gate="-6" x="-71.12" y="101.6" smashed="yes" rot="R180">
 <attribute name="NAME" x="-73.66" y="102.362" size="1.524" layer="95" rot="R180"/>
@@ -5161,9 +5161,9 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <attribute name="NAME" x="-80.01" y="108.1786" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-80.01" y="103.378" size="1.778" layer="96"/>
 </instance>
-<instance part="R3" gate="G$1" x="-76.2" y="93.98" smashed="yes">
-<attribute name="NAME" x="-80.01" y="95.4786" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-80.01" y="90.678" size="1.778" layer="96"/>
+<instance part="R3" gate="G$1" x="-76.2" y="96.52" smashed="yes">
+<attribute name="NAME" x="-80.01" y="98.0186" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-80.01" y="93.218" size="1.778" layer="96"/>
 </instance>
 <instance part="R4" gate="G$1" x="-78.74" y="86.36" smashed="yes">
 <attribute name="NAME" x="-82.55" y="87.8586" size="1.778" layer="95"/>
@@ -5286,7 +5286,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <pinref part="RS485MODULE2" gate="G$1" pin="DI"/>
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="-71.12" y1="96.52" x2="-68.58" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="-71.12" y1="96.52" x2="-71.12" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -5359,7 +5358,7 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <segment>
 <pinref part="R3" gate="G$1" pin="1"/>
 <pinref part="RS232IN" gate="-5" pin="S"/>
-<wire x1="-81.28" y1="96.52" x2="-81.28" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="-83.82" y1="96.52" x2="-81.28" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$11" class="0">
