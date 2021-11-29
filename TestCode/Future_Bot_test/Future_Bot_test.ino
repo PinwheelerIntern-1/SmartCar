@@ -2,7 +2,7 @@
 #include <SoftwareSerial.h>
 #include "DFRobotDFPlayerMini.h"
 #include <Adafruit_NeoPixel.h>
-
+ 
 #define MODBUS_DATA_TRANSACTION_PIN_LEFT A0   //DE & DE Pin of MAX485
 #define MODBUS_DATA_TRANSACTION_PIN_RIGHT A2
 #define VOLTAGE_READING_PIN A3
