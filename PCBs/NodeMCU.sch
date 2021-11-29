@@ -7701,6 +7701,8 @@ Source: http://www.osram.convergy.de/</description>
 <part name="SUPPLY13" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="5V" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-02-PIN" device="-LONG-PAD"/>
 <part name="SUPPLY14" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="R2" library="adafruit" deviceset="R-US_" device="M0805" value="1k"/>
+<part name="R3" library="adafruit" deviceset="R-US_" device="M0805" value="1k"/>
 </parts>
 <sheets>
 <sheet>
@@ -7833,6 +7835,14 @@ Source: http://www.osram.convergy.de/</description>
 <instance part="SUPPLY14" gate="GND" x="31.75" y="105.41" smashed="yes" rot="R180">
 <attribute name="VALUE" x="33.655" y="108.585" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="R2" gate="G$1" x="101.6" y="111.76" smashed="yes" rot="R180">
+<attribute name="NAME" x="100.33" y="115.3414" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="105.41" y="115.062" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R3" gate="G$1" x="99.06" y="106.68" smashed="yes" rot="R180">
+<attribute name="NAME" x="102.87" y="105.1814" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="97.79" y="104.902" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -7939,12 +7949,10 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="71.12" y1="99.06" x2="81.28" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="U$2" gate="G$1" pin="24"/>
 <wire x1="71.12" y1="99.06" x2="71.12" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="81.28" y1="99.06" x2="81.28" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="87.63" y1="71.12" x2="71.12" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="RS232RST" gate="-1" pin="S"/>
-<wire x1="116.84" y1="111.76" x2="109.22" y2="111.76" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="111.76" x2="109.22" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="104.14" x2="81.28" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="99.06" x2="81.28" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="81.28" y1="111.76" x2="96.52" y2="111.76" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -7953,11 +7961,9 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="73.66" y1="96.52" x2="73.66" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="68.58" x2="87.63" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="U$2" gate="G$1" pin="23"/>
-<pinref part="RS232RST" gate="-2" pin="S"/>
-<wire x1="83.82" y1="101.6" x2="83.82" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="109.22" x2="111.76" y2="109.22" width="0.1524" layer="91"/>
-<wire x1="111.76" y1="109.22" x2="111.76" y2="101.6" width="0.1524" layer="91"/>
-<wire x1="111.76" y1="101.6" x2="83.82" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="96.52" x2="83.82" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="R3" gate="G$1" pin="2"/>
+<wire x1="83.82" y1="106.68" x2="93.98" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -8049,6 +8055,22 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="91.44" y1="81.28" x2="91.44" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="LCD-PCF8574" gate="-2" pin="S"/>
 <wire x1="91.44" y1="116.84" x2="76.2" y2="116.84" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$5" class="0">
+<segment>
+<pinref part="RS232RST" gate="-1" pin="S"/>
+<wire x1="116.84" y1="111.76" x2="106.68" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="R2" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="N$10" class="0">
+<segment>
+<pinref part="RS232RST" gate="-2" pin="S"/>
+<wire x1="116.84" y1="109.22" x2="111.76" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="109.22" x2="111.76" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="104.14" y1="106.68" x2="111.76" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
