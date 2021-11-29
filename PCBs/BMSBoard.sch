@@ -11562,83 +11562,154 @@ general purpose rectifier, 1 A</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="diy-modules">
-<description>&lt;b&gt;DIY Modules for Arduino, Raspberry Pi, CubieBoard etc.&lt;/b&gt;
-&lt;br&gt;&lt;br&gt;
-The library contains a list of symbols and footprints for popular, cheap and easy-to-use electronic modules.&lt;br&gt;
-The modules are intend to work with microprocessor-based platforms such as &lt;a href="http://arduino.cc"&gt;Arduino&lt;/a&gt;, &lt;a href="http://raspberrypi.org/"&gt;Raspberry Pi&lt;/a&gt;, &lt;a href="http://cubieboard.org/"&gt;CubieBoard&lt;/a&gt;, &lt;a href="http://beagleboard.org/"&gt;BeagleBone&lt;/a&gt; and many others. There are many manufacturers of the modules in the world. Almost all of them can be bought on &lt;a href="ebay.com"&gt;ebay.com&lt;/a&gt;.&lt;br&gt;
-&lt;br&gt;
-By using this library, you can design a PCB for devices created with usage of modules. Even if you do not need to create PCB design, you can also use the library to quickly document your work by drawing schematics of devices built by you.&lt;br&gt;
-&lt;br&gt;
-The latest version, examples, photos and much more can be found at: &lt;b&gt;&lt;a href="http://diymodules.org/eagle"&gt;diymodules.org/eagle&lt;/a&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailto:eagle@diymodules.org"&gt;eagle@diymodules.org&lt;/b&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;
-&lt;i&gt;Version: 1.8.0 (2017-Jul-02)&lt;/i&gt;&lt;br&gt;
-&lt;i&gt;Created by: Miroslaw Brudnowski&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-&lt;i&gt;Released under the Creative Commons Attribution 4.0 International License: &lt;a href="http://creativecommons.org/licenses/by/4.0"&gt;http://creativecommons.org/licenses/by/4.0&lt;/a&gt;&lt;/i&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;center&gt;
-&lt;a href="http://diymodules.org/eagle"&gt;&lt;img src="http://www.diymodules.org/img/diymodules-lbr-image.php?v=1.8.0" alt="DIYmodules.org"&gt;&lt;/a&gt;
-&lt;/center&gt;</description>
+<library name="national-semiconductor" urn="urn:adsk.eagle:library:307">
+<description>&lt;b&gt;National Semiconductor&lt;/b&gt;&lt;p&gt;
+http://www.national.com&lt;br&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
 <packages>
-<package name="DC-DC-STEP-DOWN-LM2596">
-<description>&lt;b&gt;DC/DC Step-Down Regulator&lt;/b&gt; based on &lt;b&gt;LM2596-ADJ&lt;/b&gt; chip</description>
-<wire x1="-21.59" y1="10.414" x2="21.59" y2="10.414" width="0.127" layer="21"/>
-<wire x1="21.59" y1="10.414" x2="21.59" y2="-10.414" width="0.127" layer="21"/>
-<wire x1="21.59" y1="-10.414" x2="-21.59" y2="-10.414" width="0.127" layer="21"/>
-<wire x1="-21.59" y1="-10.414" x2="-21.59" y2="10.414" width="0.127" layer="21"/>
-<pad name="IN+" x="-19.812" y="8.636" drill="1.5" diameter="2.5" shape="square"/>
-<pad name="IN-" x="-19.812" y="-8.636" drill="1.5" diameter="2.5" shape="square"/>
-<pad name="OUT-" x="19.812" y="-8.636" drill="1.5" diameter="2.5" shape="square"/>
-<pad name="OUT+" x="19.812" y="8.636" drill="1.5" diameter="2.5" shape="square"/>
-<hole x="-14.478" y="7.62" drill="3"/>
-<hole x="15.24" y="-7.62" drill="3"/>
-<text x="0" y="11.43" size="1.27" layer="25" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-11.43" size="1.27" layer="27" align="top-center">&gt;VALUE</text>
-<text x="-19.685" y="0" size="1.778" layer="21" rot="R90" align="center">IN</text>
-<text x="19.685" y="0" size="1.778" layer="21" rot="R90" align="center">OUT</text>
-<wire x1="19.685" y1="6.985" x2="19.685" y2="5.715" width="0.254" layer="21"/>
-<wire x1="19.05" y1="6.35" x2="20.32" y2="6.35" width="0.254" layer="21"/>
-<wire x1="-19.685" y1="-6.985" x2="-19.685" y2="-5.715" width="0.254" layer="21"/>
-<wire x1="19.685" y1="-6.985" x2="19.685" y2="-5.715" width="0.254" layer="21"/>
-<wire x1="-19.685" y1="6.985" x2="-19.685" y2="5.715" width="0.254" layer="21"/>
-<wire x1="-20.32" y1="6.35" x2="-19.05" y2="6.35" width="0.254" layer="21"/>
+<package name="T05D" urn="urn:adsk.eagle:footprint:21181/1" library_version="3">
+<description>&lt;b&gt;TO-220&lt;/b&gt;&lt;p&gt;
+5 lead, National Semiconductor T05D</description>
+<wire x1="-5.1054" y1="2.0066" x2="-5.1054" y2="-0.3302" width="0.254" layer="21"/>
+<wire x1="-5.1054" y1="-0.3302" x2="-4.8514" y2="-1.3208" width="0.254" layer="21"/>
+<wire x1="4.826" y1="-1.3208" x2="5.08" y2="-0.3302" width="0.254" layer="21"/>
+<wire x1="5.08" y1="-0.3302" x2="5.08" y2="2.0066" width="0.254" layer="21"/>
+<wire x1="-4.8514" y1="-1.3208" x2="-3.048" y2="-1.3208" width="0.254" layer="21"/>
+<wire x1="-3.048" y1="-1.3208" x2="-0.3556" y2="-1.3208" width="0.254" layer="51"/>
+<wire x1="-0.3556" y1="-1.3208" x2="0.3556" y2="-1.3208" width="0.254" layer="21"/>
+<wire x1="0.3556" y1="-1.3208" x2="3.048" y2="-1.3208" width="0.254" layer="51"/>
+<wire x1="3.048" y1="-1.3208" x2="4.826" y2="-1.3208" width="0.254" layer="21"/>
+<circle x="-4.2926" y="-0.7874" radius="0.254" width="0" layer="21"/>
+<pad name="1" x="-3.4036" y="-5.08" drill="1.016" shape="long" rot="R90"/>
+<pad name="2" x="-1.7018" y="-0.9144" drill="1.016" shape="long" rot="R90"/>
+<pad name="3" x="0" y="-5.08" drill="1.016" shape="long" rot="R90"/>
+<pad name="4" x="1.7018" y="-0.9144" drill="1.016" shape="long" rot="R90"/>
+<pad name="5" x="3.4036" y="-5.08" drill="1.016" shape="long" rot="R90"/>
+<text x="-5.715" y="-5.715" size="1.778" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="7.62" y="-5.715" size="1.778" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
+<rectangle x1="-5.2324" y1="1.8542" x2="5.207" y2="3.1242" layer="21"/>
+<rectangle x1="-3.8862" y1="-3.8608" x2="-2.921" y2="-1.3462" layer="21"/>
+<rectangle x1="-0.4826" y1="-3.8608" x2="0.4826" y2="-1.3462" layer="21"/>
+<rectangle x1="2.921" y1="-3.8608" x2="3.8862" y2="-1.3462" layer="21"/>
+</package>
+<package name="TO263-5" urn="urn:adsk.eagle:footprint:16235/1" library_version="3">
+<description>&lt;b&gt;TO-263&lt;/b&gt;</description>
+<wire x1="5.094" y1="7.165" x2="5.094" y2="-2.88" width="0.2032" layer="51"/>
+<wire x1="5.094" y1="-2.88" x2="-5.094" y2="-2.88" width="0.2032" layer="21"/>
+<wire x1="-5.094" y1="-2.88" x2="-5.094" y2="7.165" width="0.2032" layer="51"/>
+<wire x1="-5.094" y1="7.165" x2="5.094" y2="7.165" width="0.2032" layer="51"/>
+<wire x1="-5.105" y1="7.267" x2="-5.105" y2="7.678" width="0.2032" layer="51"/>
+<wire x1="-5.105" y1="7.678" x2="-3.378" y2="8.135" width="0.2032" layer="51"/>
+<wire x1="-3.378" y1="8.135" x2="3.378" y2="8.135" width="0.2032" layer="51"/>
+<wire x1="3.378" y1="8.135" x2="5.105" y2="7.678" width="0.2032" layer="51"/>
+<wire x1="5.105" y1="7.678" x2="5.105" y2="7.267" width="0.2032" layer="51"/>
+<wire x1="5.105" y1="7.267" x2="-5.105" y2="7.267" width="0.2032" layer="51"/>
+<smd name="6" x="0" y="2.54" dx="10.8" dy="10.41" layer="1"/>
+<smd name="1" x="-3.4036" y="-5.7912" dx="1.0668" dy="2.159" layer="1"/>
+<smd name="2" x="-1.7018" y="-5.7912" dx="1.0668" dy="2.159" layer="1"/>
+<smd name="3" x="0" y="-5.7912" dx="1.0668" dy="2.159" layer="1"/>
+<smd name="4" x="1.7018" y="-5.7912" dx="1.0668" dy="2.159" layer="1"/>
+<smd name="5" x="3.4036" y="-5.7912" dx="1.0668" dy="2.159" layer="1"/>
+<text x="-5.588" y="-5.588" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="6.858" y="-5.588" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-3.8862" y1="-6.604" x2="-2.921" y2="-4.445" layer="51"/>
+<rectangle x1="-3.8862" y1="-4.4704" x2="-2.921" y2="-2.794" layer="21"/>
+<rectangle x1="-2.1844" y1="-6.604" x2="-1.2192" y2="-4.445" layer="51"/>
+<rectangle x1="-0.4826" y1="-6.604" x2="0.4826" y2="-4.445" layer="51"/>
+<rectangle x1="1.2192" y1="-6.604" x2="2.1844" y2="-4.445" layer="51"/>
+<rectangle x1="2.921" y1="-6.604" x2="3.8862" y2="-4.445" layer="51"/>
+<rectangle x1="-2.1844" y1="-4.4704" x2="-1.2192" y2="-2.794" layer="21"/>
+<rectangle x1="-0.4826" y1="-4.4704" x2="0.4826" y2="-2.794" layer="21"/>
+<rectangle x1="1.2192" y1="-4.4704" x2="2.1844" y2="-2.794" layer="21"/>
+<rectangle x1="2.921" y1="-4.4704" x2="3.8862" y2="-2.794" layer="21"/>
+<polygon width="0.2032" layer="51">
+<vertex x="-5.1054" y="7.267"/>
+<vertex x="-5.1054" y="7.6782"/>
+<vertex x="-3.3782" y="8.1354"/>
+<vertex x="3.3782" y="8.1354"/>
+<vertex x="5.1054" y="7.6782"/>
+<vertex x="5.1054" y="7.267"/>
+</polygon>
 </package>
 </packages>
+<packages3d>
+<package3d name="T05D" urn="urn:adsk.eagle:package:21216/1" type="box" library_version="3">
+<description>TO-220
+5 lead, National Semiconductor T05D</description>
+<packageinstances>
+<packageinstance name="T05D"/>
+</packageinstances>
+</package3d>
+<package3d name="TO263-5" urn="urn:adsk.eagle:package:16438/2" type="model" library_version="3">
+<description>TO-263</description>
+<packageinstances>
+<packageinstance name="TO263-5"/>
+</packageinstances>
+</package3d>
+</packages3d>
 <symbols>
-<symbol name="DC-DC-STEP-DOWN-LM2596">
-<description>&lt;b&gt;DC/DC Step-Down Regulator&lt;/b&gt; based on &lt;b&gt;LM2596-ADJ&lt;/b&gt; chip</description>
-<pin name="IN+" x="-17.78" y="5.08" visible="pin" length="middle"/>
-<pin name="IN-" x="-17.78" y="-5.08" visible="pin" length="middle"/>
-<pin name="OUT+" x="17.78" y="5.08" visible="pin" length="middle" rot="R180"/>
-<pin name="OUT-" x="17.78" y="-5.08" visible="pin" length="middle" rot="R180"/>
-<wire x1="-12.7" y1="10.16" x2="12.7" y2="10.16" width="0.254" layer="94"/>
-<wire x1="12.7" y1="10.16" x2="12.7" y2="-10.16" width="0.254" layer="94"/>
-<wire x1="12.7" y1="-10.16" x2="-12.7" y2="-10.16" width="0.254" layer="94"/>
-<wire x1="-12.7" y1="-10.16" x2="-12.7" y2="10.16" width="0.254" layer="94"/>
-<text x="-12.7" y="15.24" size="1.778" layer="95">&gt;NAME</text>
-<text x="-12.7" y="12.7" size="1.778" layer="96">&gt;VALUE</text>
+<symbol name="LM2596" urn="urn:adsk.eagle:symbol:21180/1" library_version="3">
+<wire x1="-10.16" y1="7.62" x2="10.16" y2="7.62" width="0.254" layer="94"/>
+<wire x1="10.16" y1="7.62" x2="10.16" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-7.62" x2="-10.16" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-7.62" x2="-10.16" y2="7.62" width="0.254" layer="94"/>
+<text x="-10.16" y="8.89" size="1.778" layer="95">&gt;NAME</text>
+<text x="-10.16" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="VIN" x="-12.7" y="5.08" length="short" direction="in"/>
+<pin name="!ON!/OFF" x="-12.7" y="0" length="short" direction="in"/>
+<pin name="GND" x="-12.7" y="-5.08" length="short" direction="pwr"/>
+<pin name="OUT" x="12.7" y="2.54" length="short" direction="out" rot="R180"/>
+<pin name="FB" x="12.7" y="-2.54" length="short" direction="in" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="DC-DC-STEP-DOWN-LM2596">
-<description>&lt;b&gt;DC/DC Step-Down Regulator&lt;/b&gt; based on &lt;b&gt;LM2596-ADJ&lt;/b&gt; chip
-&lt;p&gt;&lt;b&gt;LM2596&lt;/b&gt; datasheet available here:&lt;br /&gt;&lt;a href="http://www.ti.com/lit/ds/symlink/lm2596.pdf"&gt;http://www.ti.com/lit/ds/symlink/lm2596.pdf&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;b&gt;&lt;a href="http://www.ebay.com/sch/lm2596+power+regulator"&gt;Click here to find device on ebay.com&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="photo" src="http://www.diymodules.org/img/device-photo.php?name=DC-DC-STEP-DOWN-LM2596"&gt;&lt;/p&gt;</description>
+<deviceset name="LM2596" urn="urn:adsk.eagle:component:21246/3" prefix="IC" library_version="3">
+<description>&lt;b&gt;SIMPLE SWITCHER® Power Converter 150 kHz 3A Step-Down Voltage Regulator&lt;/b&gt;&lt;p&gt;
+Source: http://www.national.com/ds/LM/LM2596.pdf</description>
 <gates>
-<gate name="G$1" symbol="DC-DC-STEP-DOWN-LM2596" x="0" y="0"/>
+<gate name="G$1" symbol="LM2596" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="DC-DC-STEP-DOWN-LM2596">
+<device name="T" package="T05D">
 <connects>
-<connect gate="G$1" pin="IN+" pad="IN+"/>
-<connect gate="G$1" pin="IN-" pad="IN-"/>
-<connect gate="G$1" pin="OUT+" pad="OUT+"/>
-<connect gate="G$1" pin="OUT-" pad="OUT-"/>
+<connect gate="G$1" pin="!ON!/OFF" pad="5"/>
+<connect gate="G$1" pin="FB" pad="4"/>
+<connect gate="G$1" pin="GND" pad="3"/>
+<connect gate="G$1" pin="OUT" pad="2"/>
+<connect gate="G$1" pin="VIN" pad="1"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:21216/1"/>
+</package3dinstances>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="LM2596T-ADJ/LF02" constant="no"/>
+<attribute name="OC_FARNELL" value="9494162" constant="no"/>
+<attribute name="OC_NEWARK" value="65K5910" constant="no"/>
+<attribute name="POPULARITY" value="0" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="S" package="TO263-5">
+<connects>
+<connect gate="G$1" pin="!ON!/OFF" pad="5"/>
+<connect gate="G$1" pin="FB" pad="4"/>
+<connect gate="G$1" pin="GND" pad="3"/>
+<connect gate="G$1" pin="OUT" pad="2"/>
+<connect gate="G$1" pin="VIN" pad="1"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:16438/2"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MF" value="NATIONAL SEMICONDUCTOR" constant="no"/>
+<attribute name="MPN" value="LM2596S-ADJ/NOPB" constant="no"/>
+<attribute name="OC_FARNELL" value="9494367" constant="no"/>
+<attribute name="OC_NEWARK" value="41K3842" constant="no"/>
+<attribute name="POPULARITY" value="12" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -11652,6 +11723,8 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 </variantdefs>
 <classes>
 <class number="0" name="default" width="0" drill="0">
+</class>
+<class number="1" name="New Class" width="0" drill="0">
 </class>
 </classes>
 <parts>
@@ -11696,8 +11769,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <part name="RIGHTMOTOR24V" library="SparkFun-Connectors" deviceset="CONN_02" device="3.5MM" value="24Volt"/>
 <part name="SUPPLY2" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY15" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="U$1" library="diy-modules" deviceset="DC-DC-STEP-DOWN-LM2596" device=""/>
-<part name="SUPPLY16" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="NODEMCU" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-02-PIN" device="-LONG-PAD"/>
 <part name="DFMINI" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-02-PIN" device="-LONG-PAD"/>
 <part name="DUALMAX485" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-02-PIN" device="-LONG-PAD"/>
@@ -11710,7 +11781,8 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <part name="SUPPLY20" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY21" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY22" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="SUPPLY23" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY25" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="IC2" library="national-semiconductor" library_urn="urn:adsk.eagle:library:307" deviceset="LM2596" device="S" package3d_urn="urn:adsk.eagle:package:16438/2"/>
 </parts>
 <sheets>
 <sheet>
@@ -11866,13 +11938,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <instance part="SUPPLY15" gate="GND" x="43.18" y="5.08" smashed="yes" rot="R90">
 <attribute name="VALUE" x="46.355" y="3.175" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="U$1" gate="G$1" x="152.4" y="2.54" smashed="yes">
-<attribute name="NAME" x="139.7" y="17.78" size="1.778" layer="95"/>
-<attribute name="VALUE" x="139.7" y="15.24" size="1.778" layer="96"/>
-</instance>
-<instance part="SUPPLY16" gate="GND" x="134.62" y="-5.08" smashed="yes">
-<attribute name="VALUE" x="132.715" y="-8.255" size="1.778" layer="96"/>
-</instance>
 <instance part="NODEMCU" gate="-2" x="185.42" y="22.86" smashed="yes">
 <attribute name="NAME" x="187.96" y="22.098" size="1.524" layer="95"/>
 </instance>
@@ -11933,8 +11998,12 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <instance part="SUPPLY22" gate="GND" x="182.88" y="-20.32" smashed="yes">
 <attribute name="VALUE" x="180.975" y="-23.495" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY23" gate="GND" x="170.18" y="-5.08" smashed="yes">
-<attribute name="VALUE" x="168.275" y="-8.255" size="1.778" layer="96"/>
+<instance part="SUPPLY25" gate="GND" x="134.62" y="-55.88" smashed="yes">
+<attribute name="VALUE" x="132.715" y="-59.055" size="1.778" layer="96"/>
+</instance>
+<instance part="IC2" gate="G$1" x="93.98" y="-10.16" smashed="yes">
+<attribute name="NAME" x="83.82" y="-1.27" size="1.778" layer="95"/>
+<attribute name="VALUE" x="83.82" y="-20.32" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -12025,10 +12094,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <pinref part="SUPPLY15" gate="GND" pin="GND"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="IN-"/>
-<pinref part="SUPPLY16" gate="GND" pin="GND"/>
-</segment>
-<segment>
 <pinref part="NODEMCU" gate="-2" pin="S"/>
 <pinref part="SUPPLY17" gate="GND" pin="GND"/>
 </segment>
@@ -12053,8 +12118,9 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <pinref part="SUPPLY22" gate="GND" pin="GND"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="OUT-"/>
-<pinref part="SUPPLY23" gate="GND" pin="GND"/>
+<pinref part="IC2" gate="G$1" pin="GND"/>
+<wire x1="81.28" y1="-15.24" x2="73.66" y2="-15.24" width="0.1524" layer="91"/>
+<label x="73.66" y="-15.24" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -12207,52 +12273,40 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <pinref part="R3" gate="G$1" pin="2"/>
 </segment>
 </net>
-<net name="N$13" class="0">
+<net name="24V" class="1">
 <segment>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="88.9" y1="25.4" x2="109.22" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="22.86" x2="88.9" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="F3" gate="F" pin="1"/>
+<wire x1="76.2" y1="22.86" x2="88.9" y2="22.86" width="0.1524" layer="91"/>
+<junction x="76.2" y="22.86"/>
 <pinref part="J2" gate="J$1" pin="2"/>
 <wire x1="76.2" y1="20.32" x2="76.2" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="22.86" x2="88.9" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="22.86" x2="88.9" y2="25.4" width="0.1524" layer="91"/>
-<junction x="76.2" y="22.86"/>
-<pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="88.9" y1="25.4" x2="93.98" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="25.4" x2="109.22" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="25.4" x2="93.98" y2="2.54" width="0.1524" layer="91"/>
-<junction x="93.98" y="25.4"/>
-<pinref part="U$1" gate="G$1" pin="IN+"/>
-<wire x1="93.98" y1="2.54" x2="134.62" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="134.62" y1="2.54" x2="134.62" y2="7.62" width="0.1524" layer="91"/>
+<label x="96.52" y="20.32" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC2" gate="G$1" pin="VIN"/>
+<wire x1="81.28" y1="-5.08" x2="73.66" y2="-5.08" width="0.1524" layer="91"/>
+<label x="73.66" y="-5.08" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$7" class="0">
+<net name="N$13" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="OUT+"/>
-<wire x1="170.18" y1="7.62" x2="170.18" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="170.18" y1="10.16" x2="170.18" y2="17.78" width="0.1524" layer="91"/>
-<wire x1="170.18" y1="17.78" x2="170.18" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="170.18" y1="25.4" x2="182.88" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="NODEMCU" gate="-1" pin="S"/>
-<pinref part="DFMINI" gate="-1" pin="S"/>
-<wire x1="182.88" y1="17.78" x2="170.18" y2="17.78" width="0.1524" layer="91"/>
-<junction x="170.18" y="17.78"/>
-<pinref part="DUALMAX485" gate="-1" pin="S"/>
-<wire x1="182.88" y1="10.16" x2="172.72" y2="10.16" width="0.1524" layer="91"/>
-<junction x="170.18" y="10.16"/>
-<pinref part="NANDGATE" gate="-1" pin="S"/>
-<wire x1="172.72" y1="10.16" x2="170.18" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="182.88" y1="2.54" x2="177.8" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="175.26" y1="2.54" x2="172.72" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="172.72" y1="2.54" x2="172.72" y2="10.16" width="0.1524" layer="91"/>
-<junction x="172.72" y="10.16"/>
-<pinref part="EXTRA1" gate="-1" pin="S"/>
-<wire x1="182.88" y1="-5.08" x2="177.8" y2="-5.08" width="0.1524" layer="91"/>
-<wire x1="177.8" y1="-5.08" x2="177.8" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="177.8" y1="2.54" x2="175.26" y2="2.54" width="0.1524" layer="91"/>
-<pinref part="EXTRA2" gate="-1" pin="S"/>
-<wire x1="182.88" y1="-15.24" x2="175.26" y2="-15.24" width="0.1524" layer="91"/>
-<wire x1="175.26" y1="-15.24" x2="175.26" y2="2.54" width="0.1524" layer="91"/>
-<junction x="175.26" y="2.54"/>
+<pinref part="IC2" gate="G$1" pin="!ON!/OFF"/>
+<wire x1="81.28" y1="-10.16" x2="73.66" y2="-10.16" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$17" class="0">
+<segment>
+<pinref part="IC2" gate="G$1" pin="OUT"/>
+<wire x1="106.68" y1="-7.62" x2="111.76" y2="-7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$18" class="0">
+<segment>
+<pinref part="IC2" gate="G$1" pin="FB"/>
+<wire x1="106.68" y1="-12.7" x2="111.76" y2="-12.7" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
