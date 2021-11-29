@@ -7297,6 +7297,7 @@ Source: http://www.osram.convergy.de/</description>
 <part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="5V" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-02-PIN" device="-LONG-PAD"/>
 <part name="SUPPLY11" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="R3" library="adafruit" deviceset="R-US_" device="M0805" value="1K"/>
 </parts>
 <sheets>
 <sheet>
@@ -7417,6 +7418,10 @@ Source: http://www.osram.convergy.de/</description>
 </instance>
 <instance part="SUPPLY11" gate="GND" x="89.052" y="74.91" smashed="yes">
 <attribute name="VALUE" x="87.147" y="71.735" size="1.778" layer="96"/>
+</instance>
+<instance part="R3" gate="G$1" x="78.74" y="48.26" smashed="yes" rot="R180">
+<attribute name="NAME" x="82.55" y="46.7614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="82.55" y="51.562" size="1.778" layer="96" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -7606,8 +7611,15 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="RXTXGND" gate="-2" pin="S"/>
 <wire x1="40" y1="43.42" x2="45.72" y2="43.42" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="43.42" x2="45.72" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="R3" gate="G$1" pin="2"/>
+<wire x1="45.72" y1="48.26" x2="73.66" y2="48.26" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="R3" gate="G$1" pin="1"/>
 <pinref part="DFPLAYER" gate="G$1" pin="TX"/>
-<wire x1="45.72" y1="48.26" x2="91.44" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="48.26" x2="91.44" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
