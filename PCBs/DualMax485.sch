@@ -300,6 +300,52 @@ Number of pins: &lt;b&gt;2&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <wire x1="1.3" y1="-2.3" x2="1.3" y2="-1.8" width="0.2" layer="21"/>
 <wire x1="-1.3" y1="-1.8" x2="1.3" y2="-1.8" width="0.2" layer="21"/>
 </package>
+<package name="JST-XH-03-PACKAGE-LONG-PAD">
+<description>&lt;b&gt;JST XH Connector Long Pads (Package)&lt;/b&gt;&lt;p&gt;
+
+Wire to board connector.
+
+Pitch: 2,54 mm, (0.100")&lt;p&gt;
+Number of pins: &lt;b&gt;3&lt;/b&gt;&lt;b&gt;&lt;P&gt;
+
+&lt;b&gt;Created by Rembrandt Electronics&lt;/b&gt;&lt;p&gt;
+&lt;b&gt;www.rembrandtelectronics.com&lt;/b&gt;&lt;p&gt;</description>
+<wire x1="4.95" y1="-2.3575" x2="4.95" y2="3.3925" width="0.254" layer="21"/>
+<wire x1="4.95" y1="3.3925" x2="-4.95" y2="3.3925" width="0.254" layer="21"/>
+<wire x1="-4.95" y1="3.3925" x2="-4.95" y2="-2.3575" width="0.254" layer="21"/>
+<wire x1="-4.95" y1="-2.3575" x2="4.95" y2="-2.3575" width="0.254" layer="21"/>
+<pad name="3" x="2.54" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="2" x="0" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="1" x="-2.54" y="0" drill="1.016" shape="long" rot="R90"/>
+<text x="-5.555" y="-2.04" size="1.016" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="-4.6025" y="3.8925" size="1.016" layer="27" ratio="10">&gt;VALUE</text>
+<text x="-4.1675" y="-1.4875" size="1.016" layer="51" ratio="10">1</text>
+<wire x1="-2.6" y1="-2.3" x2="-2.6" y2="-1.8" width="0.254" layer="21"/>
+<wire x1="2.5" y1="-2.3" x2="2.5" y2="-1.8" width="0.254" layer="21"/>
+</package>
+<package name="JST-XH-03-PACKAGE-ROUND-PAD">
+<description>&lt;b&gt;JST XH Connector Round Pads (Package)&lt;/b&gt;&lt;p&gt;
+
+Wire to board connector.
+
+Pitch: 2,54 mm, (0.100")&lt;p&gt;
+Number of pins: &lt;b&gt;3&lt;/b&gt;&lt;b&gt;&lt;P&gt;
+
+&lt;b&gt;Created by Rembrandt Electronics&lt;/b&gt;&lt;p&gt;
+&lt;b&gt;www.rembrandtelectronics.com&lt;/b&gt;&lt;p&gt;</description>
+<wire x1="4.95" y1="-2.3575" x2="4.95" y2="3.3925" width="0.254" layer="21"/>
+<wire x1="4.95" y1="3.3925" x2="-4.95" y2="3.3925" width="0.254" layer="21"/>
+<wire x1="-4.95" y1="3.3925" x2="-4.95" y2="-2.3575" width="0.254" layer="21"/>
+<wire x1="-4.95" y1="-2.3575" x2="4.95" y2="-2.3575" width="0.254" layer="21"/>
+<pad name="3" x="2.54" y="0" drill="1.016" rot="R90"/>
+<pad name="2" x="0" y="0" drill="1.016" rot="R90"/>
+<pad name="1" x="-2.54" y="0" drill="1.016" rot="R90"/>
+<text x="-5.555" y="-2.04" size="1.016" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="-4.6025" y="3.8925" size="1.016" layer="27" ratio="10">&gt;VALUE</text>
+<text x="-4.1675" y="-1.4875" size="1.016" layer="51" ratio="10">1</text>
+<wire x1="-2.6" y1="-2.3" x2="-2.6" y2="-1.8" width="0.254" layer="21"/>
+<wire x1="2.5" y1="-2.3" x2="2.5" y2="-1.8" width="0.254" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="MV">
@@ -393,6 +439,44 @@ Number of pins: &lt;b&gt;2&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <connects>
 <connect gate="-1" pin="S" pad="1"/>
 <connect gate="-2" pin="S" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="JST-XH-03-PIN" prefix="X">
+<description>&lt;b&gt;JST XH Connector 2 Pin&lt;/b&gt;&lt;p&gt;
+
+Wire to board connector.
+
+Pitch: 2,54 mm, (0.100")&lt;p&gt;
+Number of pins: &lt;b&gt;3&lt;/b&gt;&lt;b&gt;&lt;P&gt;
+
+&lt;b&gt;Created by Rembrandt Electronics&lt;/b&gt;&lt;p&gt;
+&lt;b&gt;www.rembrandtelectronics.com&lt;/b&gt;&lt;p&gt;</description>
+<gates>
+<gate name="-1" symbol="MV" x="2.54" y="7.62" addlevel="always" swaplevel="1"/>
+<gate name="-2" symbol="M" x="2.54" y="5.08" addlevel="always" swaplevel="1"/>
+<gate name="-3" symbol="M" x="2.54" y="2.54" addlevel="always" swaplevel="1"/>
+</gates>
+<devices>
+<device name="-LONG-PAD" package="JST-XH-03-PACKAGE-LONG-PAD">
+<connects>
+<connect gate="-1" pin="S" pad="1"/>
+<connect gate="-2" pin="S" pad="2"/>
+<connect gate="-3" pin="S" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-ROUND-PAD" package="JST-XH-03-PACKAGE-ROUND-PAD">
+<connects>
+<connect gate="-1" pin="S" pad="1"/>
+<connect gate="-2" pin="S" pad="2"/>
+<connect gate="-3" pin="S" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -4970,8 +5054,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <part name="SUPPLY16" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="RS232IN" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-07-PIN" device="-LONG-PAD"/>
 <part name="SUPPLY17" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="RS485OUT1" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-02-PIN" device="-LONG-PAD"/>
-<part name="RS485OUT2" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-02-PIN" device="-LONG-PAD"/>
 <part name="IC2" library="adafruit" deviceset="78*" device="DT" technology="05"/>
 <part name="RS485MODULE2" library="diy-modules" deviceset="RS485-TTL-CONVERTER" device=""/>
 <part name="RS485MODULE1" library="diy-modules" deviceset="RS485-TTL-CONVERTER" device=""/>
@@ -4980,6 +5062,8 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <part name="R3" library="adafruit" deviceset="R-US_" device="M0805" value="1k"/>
 <part name="R4" library="adafruit" deviceset="R-US_" device="M0805" value="1k"/>
 <part name="R5" library="adafruit" deviceset="R-US_" device="M0805" value="1k"/>
+<part name="RS485OUTCONNECTEDTOD-D+GND" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-03-PIN" device="-LONG-PAD"/>
+<part name="RS485CONNECTEDTOD-D+GND" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-03-PIN" device="-LONG-PAD"/>
 </parts>
 <sheets>
 <sheet>
@@ -4989,8 +5073,8 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <instance part="SUPPLY5" gate="G$1" x="-22.86" y="86.36" smashed="yes">
 <attribute name="VALUE" x="-24.765" y="89.535" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY6" gate="GND" x="-22.86" y="73.66" smashed="yes">
-<attribute name="VALUE" x="-24.765" y="70.485" size="1.778" layer="96"/>
+<instance part="SUPPLY6" gate="GND" x="-17.78" y="73.66" smashed="yes">
+<attribute name="VALUE" x="-19.685" y="70.485" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY12" gate="GND" x="-83.82" y="127" smashed="yes" rot="R180">
 <attribute name="VALUE" x="-81.915" y="130.175" size="1.778" layer="96" rot="R180"/>
@@ -5001,8 +5085,8 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <instance part="SUPPLY2" gate="G$1" x="-22.86" y="106.68" smashed="yes">
 <attribute name="VALUE" x="-24.765" y="89.535" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY3" gate="GND" x="-22.86" y="93.98" smashed="yes">
-<attribute name="VALUE" x="-24.765" y="90.805" size="1.778" layer="96"/>
+<instance part="SUPPLY3" gate="GND" x="-15.24" y="93.98" smashed="yes">
+<attribute name="VALUE" x="-17.145" y="90.805" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY1" gate="G$1" x="-96.52" y="116.84" smashed="yes" rot="R90">
 <attribute name="VALUE" x="-99.695" y="114.935" size="1.778" layer="96" rot="R90"/>
@@ -5054,20 +5138,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <instance part="SUPPLY17" gate="GND" x="-68.58" y="88.9" smashed="yes">
 <attribute name="VALUE" x="-70.485" y="85.725" size="1.778" layer="96"/>
 </instance>
-<instance part="RS485OUT1" gate="-2" x="-20.32" y="78.74" smashed="yes">
-<attribute name="NAME" x="-17.78" y="77.978" size="1.524" layer="95"/>
-</instance>
-<instance part="RS485OUT1" gate="-1" x="-20.32" y="81.28" smashed="yes">
-<attribute name="NAME" x="-17.78" y="80.518" size="1.524" layer="95"/>
-<attribute name="VALUE" x="-21.082" y="82.677" size="1.778" layer="96"/>
-</instance>
-<instance part="RS485OUT2" gate="-2" x="-7.62" y="99.06" smashed="yes">
-<attribute name="NAME" x="-5.08" y="98.298" size="1.524" layer="95"/>
-</instance>
-<instance part="RS485OUT2" gate="-1" x="-7.62" y="101.6" smashed="yes">
-<attribute name="NAME" x="-5.08" y="100.838" size="1.524" layer="95"/>
-<attribute name="VALUE" x="-8.382" y="102.997" size="1.778" layer="96"/>
-</instance>
 <instance part="IC2" gate="A1" x="-83.82" y="116.84" smashed="yes" rot="R180">
 <attribute name="NAME" x="-76.2" y="111.125" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-76.2" y="113.665" size="1.778" layer="96" rot="R180"/>
@@ -5102,6 +5172,26 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <instance part="R5" gate="G$1" x="-78.74" y="71.12" smashed="yes">
 <attribute name="NAME" x="-82.55" y="72.6186" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-82.55" y="67.818" size="1.778" layer="96"/>
+</instance>
+<instance part="RS485OUTCONNECTEDTOD-D+GND" gate="-1" x="15.24" y="101.6" smashed="yes">
+<attribute name="NAME" x="17.78" y="100.838" size="1.524" layer="95"/>
+<attribute name="VALUE" x="14.478" y="102.997" size="1.778" layer="96"/>
+</instance>
+<instance part="RS485OUTCONNECTEDTOD-D+GND" gate="-2" x="15.24" y="99.06" smashed="yes">
+<attribute name="NAME" x="17.78" y="98.298" size="1.524" layer="95"/>
+</instance>
+<instance part="RS485OUTCONNECTEDTOD-D+GND" gate="-3" x="15.24" y="96.52" smashed="yes">
+<attribute name="NAME" x="17.78" y="95.758" size="1.524" layer="95"/>
+</instance>
+<instance part="RS485CONNECTEDTOD-D+GND" gate="-1" x="15.24" y="83.82" smashed="yes">
+<attribute name="NAME" x="17.78" y="83.058" size="1.524" layer="95"/>
+<attribute name="VALUE" x="14.478" y="85.217" size="1.778" layer="96"/>
+</instance>
+<instance part="RS485CONNECTEDTOD-D+GND" gate="-2" x="15.24" y="81.28" smashed="yes">
+<attribute name="NAME" x="17.78" y="80.518" size="1.524" layer="95"/>
+</instance>
+<instance part="RS485CONNECTEDTOD-D+GND" gate="-3" x="15.24" y="78.74" smashed="yes">
+<attribute name="NAME" x="17.78" y="77.978" size="1.524" layer="95"/>
 </instance>
 </instances>
 <busses>
@@ -5161,10 +5251,19 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <segment>
 <pinref part="RS485MODULE2" gate="G$1" pin="GND"/>
 <pinref part="SUPPLY3" gate="GND" pin="GND"/>
+<pinref part="RS485OUTCONNECTEDTOD-D+GND" gate="-3" pin="S"/>
+<wire x1="-15.24" y1="96.52" x2="12.7" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="96.52" x2="-22.86" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="RS485MODULE1" gate="G$1" pin="GND"/>
 <pinref part="SUPPLY6" gate="GND" pin="GND"/>
+<wire x1="-17.78" y1="76.2" x2="-2.54" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="-2.54" y1="76.2" x2="-2.54" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="RS485CONNECTEDTOD-D+GND" gate="-3" pin="S"/>
+<wire x1="-2.54" y1="78.74" x2="12.7" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="76.2" x2="-22.86" y2="76.2" width="0.1524" layer="91"/>
+<junction x="-17.78" y="76.2"/>
 </segment>
 </net>
 <net name="N$9" class="0">
@@ -5201,15 +5300,15 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <net name="N$4" class="0">
 <segment>
 <pinref part="RS485MODULE2" gate="G$1" pin="B"/>
-<pinref part="RS485OUT2" gate="-1" pin="S"/>
-<wire x1="-10.16" y1="101.6" x2="-22.86" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="-22.86" y1="101.6" x2="12.7" y2="101.6" width="0.1524" layer="91"/>
+<pinref part="RS485OUTCONNECTEDTOD-D+GND" gate="-1" pin="S"/>
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
 <pinref part="RS485MODULE2" gate="G$1" pin="A"/>
-<pinref part="RS485OUT2" gate="-2" pin="S"/>
-<wire x1="-10.16" y1="99.06" x2="-22.86" y2="99.06" width="0.1524" layer="91"/>
+<pinref part="RS485OUTCONNECTEDTOD-D+GND" gate="-2" pin="S"/>
+<wire x1="-22.86" y1="99.06" x2="12.7" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -5240,14 +5339,20 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 </net>
 <net name="N$12" class="0">
 <segment>
+<pinref part="RS485CONNECTEDTOD-D+GND" gate="-1" pin="S"/>
+<wire x1="-7.62" y1="83.82" x2="12.7" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="-7.62" y1="81.28" x2="-7.62" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="RS485MODULE1" gate="G$1" pin="B"/>
-<pinref part="RS485OUT1" gate="-1" pin="S"/>
+<wire x1="-22.86" y1="81.28" x2="-7.62" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$13" class="0">
 <segment>
 <pinref part="RS485MODULE1" gate="G$1" pin="A"/>
-<pinref part="RS485OUT1" gate="-2" pin="S"/>
+<wire x1="-22.86" y1="78.74" x2="-5.08" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="78.74" x2="-5.08" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="RS485CONNECTEDTOD-D+GND" gate="-2" pin="S"/>
+<wire x1="-5.08" y1="81.28" x2="12.7" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="0">
