@@ -7680,7 +7680,7 @@ Source: http://www.osram.convergy.de/</description>
 <part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="SUPPLY7" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="6V-12V" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="5MM" package3d_urn="urn:adsk.eagle:package:38044/1" value="6V-12V"/>
+<part name="6V-12V" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="5MM" package3d_urn="urn:adsk.eagle:package:38044/1" value="7V-9V"/>
 <part name="SUPPLY8" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY9" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="RS232RST" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-04-PIN" device="-LONG-PAD" value="Rx tx Reset Gnd"/>
@@ -8018,43 +8018,26 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="N$2" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="17"/>
-<pinref part="R5" gate="G$1" pin="2"/>
-<wire x1="87.63" y1="53.34" x2="73.66" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="73.66" y1="53.34" x2="73.66" y2="60.96" width="0.1524" layer="91"/>
-<junction x="73.66" y="53.34"/>
-<pinref part="GPIO" gate="-1" pin="S"/>
-<wire x1="73.66" y1="60.96" x2="35.56" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="60.96" x2="35.56" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="55.88" x2="96.52" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="78.74" x2="91.44" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="78.74" x2="91.44" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="101.6" x2="88.9" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="101.6" x2="88.9" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="109.22" x2="96.52" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="LCD-PCF8574" gate="-2" pin="S"/>
+<wire x1="76.2" y1="116.84" x2="96.52" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="109.22" x2="96.52" y2="116.84" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="18"/>
+<wire x1="87.63" y1="55.88" x2="96.52" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="18"/>
-<pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="87.63" y1="55.88" x2="71.12" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="GPIO" gate="-2" pin="S"/>
-<wire x1="71.12" y1="55.88" x2="71.12" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="66.04" x2="35.56" y2="66.04" width="0.1524" layer="91"/>
-<junction x="71.12" y="55.88"/>
-</segment>
-</net>
-<net name="N$14" class="0">
-<segment>
-<pinref part="U$2" gate="G$1" pin="29"/>
-<wire x1="87.63" y1="83.82" x2="88.9" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="83.82" x2="88.9" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="LCD-PCF8574" gate="-1" pin="S"/>
-<wire x1="88.9" y1="114.3" x2="76.2" y2="114.3" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$15" class="0">
-<segment>
-<pinref part="U$2" gate="G$1" pin="28"/>
-<wire x1="87.63" y1="81.28" x2="91.44" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="81.28" x2="91.44" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="LCD-PCF8574" gate="-2" pin="S"/>
-<wire x1="91.44" y1="116.84" x2="76.2" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="114.3" x2="93.98" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="17"/>
+<wire x1="87.63" y1="53.34" x2="93.98" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="53.34" x2="93.98" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -8071,6 +8054,31 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="111.76" y1="109.22" x2="111.76" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="1"/>
 <wire x1="104.14" y1="106.68" x2="111.76" y2="106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$12" class="0">
+<segment>
+<pinref part="GPIO" gate="-2" pin="S"/>
+<pinref part="R4" gate="G$1" pin="2"/>
+<wire x1="71.12" y1="55.88" x2="71.12" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="66.04" x2="35.56" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="25"/>
+<wire x1="87.63" y1="73.66" x2="76.2" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="73.66" x2="76.2" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="66.04" x2="71.12" y2="66.04" width="0.1524" layer="91"/>
+<junction x="71.12" y="66.04"/>
+</segment>
+</net>
+<net name="N$13" class="0">
+<segment>
+<pinref part="GPIO" gate="-1" pin="S"/>
+<pinref part="R5" gate="G$1" pin="2"/>
+<wire x1="73.66" y1="53.34" x2="73.66" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="60.96" x2="35.56" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="60.96" x2="35.56" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="20"/>
+<wire x1="87.63" y1="60.96" x2="73.66" y2="60.96" width="0.1524" layer="91"/>
+<junction x="73.66" y="60.96"/>
 </segment>
 </net>
 </nets>
