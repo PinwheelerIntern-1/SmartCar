@@ -7497,9 +7497,9 @@ Source: http://www.osram.convergy.de/</description>
 <instance part="SUPPLY11" gate="GND" x="89.052" y="74.91" smashed="yes">
 <attribute name="VALUE" x="87.147" y="71.735" size="1.778" layer="96"/>
 </instance>
-<instance part="R3" gate="G$1" x="78.74" y="48.26" smashed="yes" rot="R180">
-<attribute name="NAME" x="82.55" y="46.7614" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="82.55" y="51.562" size="1.778" layer="96" rot="R180"/>
+<instance part="R3" gate="G$1" x="76.2" y="48.26" smashed="yes" rot="R180">
+<attribute name="NAME" x="80.01" y="46.7614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="80.01" y="51.562" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="J2" gate="-1" x="25.4" y="38.1" smashed="yes" rot="R180">
 <attribute name="NAME" x="22.86" y="38.862" size="1.524" layer="95" rot="R180"/>
@@ -7698,24 +7698,15 @@ Source: http://www.osram.convergy.de/</description>
 <junction x="91.44" y="45.72"/>
 </segment>
 </net>
-<net name="N$2" class="0">
-<segment>
-<wire x1="45.72" y1="43.42" x2="45.72" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="R3" gate="G$1" pin="2"/>
-<wire x1="45.72" y1="48.26" x2="73.66" y2="48.26" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$4" class="0">
-<segment>
-<pinref part="R3" gate="G$1" pin="1"/>
-<pinref part="DFPLAYER" gate="G$1" pin="TX"/>
-<wire x1="83.82" y1="48.26" x2="91.44" y2="48.26" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$7" class="0">
 <segment>
 <pinref part="J2" gate="-3" pin="S"/>
 <wire x1="27.94" y1="43.18" x2="45.72" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="43.42" x2="45.72" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="R3" gate="G$1" pin="2"/>
+<wire x1="45.72" y1="45.72" x2="45.72" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="48.26" x2="71.12" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="43.18" x2="45.72" y2="43.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -7727,6 +7718,14 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="40.64" y1="40.64" x2="27.94" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="DFPLAYER" gate="G$1" pin="BUSY"/>
 <wire x1="137.16" y1="53.34" x2="114.3" y2="53.34" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="R3" gate="G$1" pin="1"/>
+<pinref part="DFPLAYER" gate="G$1" pin="TX"/>
+<wire x1="81.28" y1="48.26" x2="91.44" y2="48.26" width="0.1524" layer="91"/>
+<junction x="91.44" y="48.26"/>
 </segment>
 </net>
 </nets>
