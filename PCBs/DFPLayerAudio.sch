@@ -7361,12 +7361,12 @@ Source: http://www.osram.convergy.de/</description>
 <part name="DFPLAYER" library="diy-modules" deviceset="DFPLAYER-MINI-MODULE" device="" value=""/>
 <part name="SUPPLY2" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
-<part name="J4" library="SparkFun-Connectors" deviceset="CONN_02" device="5MM" value="Power"/>
+<part name="7V-9V" library="SparkFun-Connectors" deviceset="CONN_02" device="5MM" value="Power"/>
 <part name="SUPPLY4" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY7" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY8" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="J1" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-03-PIN" device="-LONG-PAD"/>
+<part name="AMPLIFIER" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-03-PIN" device="-LONG-PAD"/>
 <part name="SUPPLY9" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY10" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="LEFTSPKR" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-02-PIN" device="-LONG-PAD"/>
@@ -7382,10 +7382,10 @@ Source: http://www.osram.convergy.de/</description>
 <part name="SUPPLY14" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R2" library="adafruit" deviceset="R-US_" device="M0805" value="1K"/>
 <part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="J3" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-02-PIN" device="-LONG-PAD"/>
+<part name="5V" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-02-PIN" device="-LONG-PAD"/>
 <part name="SUPPLY11" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R3" library="adafruit" deviceset="R-US_" device="M0805" value="1K"/>
-<part name="J2" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-04-PIN" device="-LONG-PAD"/>
+<part name="UART" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-04-PIN" device="-LONG-PAD"/>
 </parts>
 <sheets>
 <sheet>
@@ -7402,7 +7402,7 @@ Source: http://www.osram.convergy.de/</description>
 <instance part="SUPPLY3" gate="G$1" x="86.5" y="61.5" smashed="yes">
 <attribute name="VALUE" x="84.595" y="64.675" size="1.778" layer="96"/>
 </instance>
-<instance part="J4" gate="G$1" x="21.64" y="80.22" smashed="yes">
+<instance part="7V-9V" gate="G$1" x="21.64" y="80.22" smashed="yes">
 <attribute name="VALUE" x="30.466" y="75.68" size="1.778" layer="96" font="vector" rot="R90"/>
 <attribute name="NAME" x="19.1" y="85.808" size="1.778" layer="95" font="vector"/>
 </instance>
@@ -7418,14 +7418,14 @@ Source: http://www.osram.convergy.de/</description>
 <instance part="SUPPLY8" gate="GND" x="142" y="35" smashed="yes">
 <attribute name="VALUE" x="140.095" y="31.825" size="1.778" layer="96"/>
 </instance>
-<instance part="J1" gate="-1" x="33.96" y="19.88" smashed="yes" rot="R180">
+<instance part="AMPLIFIER" gate="-1" x="33.96" y="19.88" smashed="yes" rot="R180">
 <attribute name="NAME" x="31.42" y="20.642" size="1.524" layer="95" rot="R180"/>
 <attribute name="VALUE" x="34.722" y="18.483" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="J1" gate="-2" x="33.96" y="22.42" smashed="yes" rot="R180">
+<instance part="AMPLIFIER" gate="-2" x="33.96" y="22.42" smashed="yes" rot="R180">
 <attribute name="NAME" x="31.42" y="23.182" size="1.524" layer="95" rot="R180"/>
 </instance>
-<instance part="J1" gate="-3" x="33.96" y="24.96" smashed="yes" rot="R180">
+<instance part="AMPLIFIER" gate="-3" x="33.96" y="24.96" smashed="yes" rot="R180">
 <attribute name="NAME" x="31.42" y="25.722" size="1.524" layer="95" rot="R180"/>
 </instance>
 <instance part="SUPPLY9" gate="GND" x="48.412" y="67.29" smashed="yes">
@@ -7487,10 +7487,10 @@ Source: http://www.osram.convergy.de/</description>
 <instance part="SUPPLY5" gate="GND" x="31.22" y="34.74" smashed="yes">
 <attribute name="VALUE" x="29.315" y="31.565" size="1.778" layer="96"/>
 </instance>
-<instance part="J3" gate="-2" x="91.44" y="81.28" smashed="yes">
+<instance part="5V" gate="-2" x="91.44" y="81.28" smashed="yes">
 <attribute name="NAME" x="93.98" y="80.518" size="1.524" layer="95"/>
 </instance>
-<instance part="J3" gate="-1" x="91.44" y="83.82" smashed="yes">
+<instance part="5V" gate="-1" x="91.44" y="83.82" smashed="yes">
 <attribute name="NAME" x="93.98" y="83.058" size="1.524" layer="95"/>
 <attribute name="VALUE" x="90.678" y="85.217" size="1.778" layer="96"/>
 </instance>
@@ -7501,17 +7501,17 @@ Source: http://www.osram.convergy.de/</description>
 <attribute name="NAME" x="80.01" y="46.7614" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="80.01" y="51.562" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="J2" gate="-1" x="25.4" y="38.1" smashed="yes" rot="R180">
+<instance part="UART" gate="-1" x="25.4" y="38.1" smashed="yes" rot="R180">
 <attribute name="NAME" x="22.86" y="38.862" size="1.524" layer="95" rot="R180"/>
 <attribute name="VALUE" x="26.162" y="36.703" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="J2" gate="-2" x="25.4" y="40.64" smashed="yes" rot="R180">
+<instance part="UART" gate="-2" x="25.4" y="40.64" smashed="yes" rot="R180">
 <attribute name="NAME" x="22.86" y="41.402" size="1.524" layer="95" rot="R180"/>
 </instance>
-<instance part="J2" gate="-3" x="25.4" y="43.18" smashed="yes" rot="R180">
+<instance part="UART" gate="-3" x="25.4" y="43.18" smashed="yes" rot="R180">
 <attribute name="NAME" x="22.86" y="43.942" size="1.524" layer="95" rot="R180"/>
 </instance>
-<instance part="J2" gate="-4" x="25.4" y="45.72" smashed="yes" rot="R180">
+<instance part="UART" gate="-4" x="25.4" y="45.72" smashed="yes" rot="R180">
 <attribute name="NAME" x="22.86" y="46.482" size="1.524" layer="95" rot="R180"/>
 </instance>
 </instances>
@@ -7544,7 +7544,7 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="63.652" y1="58.42" x2="63.652" y2="56.368" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="J4" gate="G$1" pin="2"/>
+<pinref part="7V-9V" gate="G$1" pin="2"/>
 <pinref part="SUPPLY6" gate="GND" pin="GND"/>
 <wire x1="29.26" y1="82.76" x2="29.26" y2="86.48" width="0.1524" layer="91"/>
 <wire x1="29.26" y1="86.48" x2="29.04" y2="86.48" width="0.1524" layer="91"/>
@@ -7568,7 +7568,7 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="35.56" y1="64.75" x2="35.56" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="J1" gate="-2" pin="S"/>
+<pinref part="AMPLIFIER" gate="-2" pin="S"/>
 <pinref part="SUPPLY7" gate="GND" pin="GND"/>
 <wire x1="36.5" y1="22.42" x2="49" y2="22.42" width="0.1524" layer="91"/>
 <wire x1="49" y1="22.42" x2="49" y2="22.04" width="0.1524" layer="91"/>
@@ -7580,13 +7580,13 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="91.44" y1="38.04" x2="91.44" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="J3" gate="-2" pin="S"/>
+<pinref part="5V" gate="-2" pin="S"/>
 <pinref part="SUPPLY11" gate="GND" pin="GND"/>
 <wire x1="88.9" y1="81.28" x2="89.052" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="89.052" y1="81.28" x2="89.052" y2="77.45" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="J2" gate="-1" pin="S"/>
+<pinref part="UART" gate="-1" pin="S"/>
 <pinref part="SUPPLY5" gate="GND" pin="GND"/>
 <wire x1="27.94" y1="38.1" x2="31.22" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="31.22" y1="38.1" x2="31.22" y2="37.28" width="0.1524" layer="91"/>
@@ -7611,7 +7611,7 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="C4" gate="G$1" pin="1"/>
 <wire x1="63.5" y1="83.82" x2="63.5" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="81.28" x2="71.12" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="J3" gate="-1" pin="S"/>
+<pinref part="5V" gate="-1" pin="S"/>
 <wire x1="88.9" y1="83.82" x2="63.5" y2="83.82" width="0.1524" layer="91"/>
 <junction x="63.5" y="83.82"/>
 </segment>
@@ -7628,7 +7628,7 @@ Source: http://www.osram.convergy.de/</description>
 <segment>
 <pinref part="DFPLAYER" gate="G$1" pin="DAC_I"/>
 <wire x1="91.44" y1="43.18" x2="76.962" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="J1" gate="-1" pin="S"/>
+<pinref part="AMPLIFIER" gate="-1" pin="S"/>
 <wire x1="36.5" y1="19.88" x2="43.18" y2="19.88" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="19.88" x2="43.18" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="15.24" x2="68.58" y2="15.24" width="0.1524" layer="91"/>
@@ -7665,7 +7665,7 @@ Source: http://www.osram.convergy.de/</description>
 <net name="N$3" class="0">
 <segment>
 <pinref part="7805" gate="A1" pin="VI"/>
-<pinref part="J4" gate="G$1" pin="1"/>
+<pinref part="7V-9V" gate="G$1" pin="1"/>
 <wire x1="38.1" y1="81.28" x2="35.56" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="81.28" x2="29.26" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="29.26" y1="81.28" x2="29.26" y2="80.22" width="0.1524" layer="91"/>
@@ -7678,7 +7678,7 @@ Source: http://www.osram.convergy.de/</description>
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="73.66" y1="55.88" x2="73.66" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="J2" gate="-4" pin="S"/>
+<pinref part="UART" gate="-4" pin="S"/>
 <wire x1="27.94" y1="45.72" x2="40.64" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="45.72" x2="40.64" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="50.8" x2="73.66" y2="50.8" width="0.1524" layer="91"/>
@@ -7686,7 +7686,7 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="J1" gate="-3" pin="S"/>
+<pinref part="AMPLIFIER" gate="-3" pin="S"/>
 <wire x1="36.5" y1="24.96" x2="36.5" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="36.5" y1="24.96" x2="36.5" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="36.5" y1="27.94" x2="60.96" y2="27.94" width="0.1524" layer="91"/>
@@ -7700,7 +7700,7 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="J2" gate="-3" pin="S"/>
+<pinref part="UART" gate="-3" pin="S"/>
 <wire x1="27.94" y1="43.18" x2="45.72" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="43.42" x2="45.72" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="2"/>
@@ -7714,7 +7714,7 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="114.3" y1="53.34" x2="114.3" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="33.02" x2="40.64" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="33.02" x2="40.64" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="J2" gate="-2" pin="S"/>
+<pinref part="UART" gate="-2" pin="S"/>
 <wire x1="40.64" y1="40.64" x2="27.94" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="DFPLAYER" gate="G$1" pin="BUSY"/>
 <wire x1="137.16" y1="53.34" x2="114.3" y2="53.34" width="0.1524" layer="91"/>

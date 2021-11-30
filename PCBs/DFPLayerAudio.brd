@@ -745,7 +745,7 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="J4" library="SparkFun-Connectors" package="SCREWTERMINAL-5MM-2" value="Power" x="77.216" y="2.54" smashed="yes" rot="R90">
+<element name="7V-9V" library="SparkFun-Connectors" package="SCREWTERMINAL-5MM-2" value="Power" x="77.216" y="2.54" smashed="yes" rot="R90">
 <attribute name="NAME" x="82.296" y="3.81" size="1.27" layer="25" font="vector" ratio="10" rot="R90"/>
 <attribute name="SF_SKU" value="PRT-08432" x="131.826" y="24.13" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="82.296" y="3.81" size="1.27" layer="27" font="vector" ratio="10" rot="R90"/>
@@ -754,8 +754,8 @@ design rules under a new name.</description>
 <attribute name="NAME" x="59.944" y="19.812" size="1.27" layer="25" rot="R180" align="bottom-center"/>
 <attribute name="VALUE" x="48.26" y="18.288" size="1.27" layer="27" rot="R270" align="top-center"/>
 </element>
-<element name="J1" library="Rembrandt Electronics - JST XH Connectors v1-0" package="JST-XH-03-PACKAGE-LONG-PAD" value="JST-XH-03-PIN-LONG-PAD" x="43.18" y="8.89" smashed="yes" rot="R270">
-<attribute name="NAME" x="47.785" y="5.58" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="AMPLIFIER" library="Rembrandt Electronics - JST XH Connectors v1-0" package="JST-XH-03-PACKAGE-LONG-PAD" value="JST-XH-03-PIN-LONG-PAD" x="43.18" y="8.89" smashed="yes" rot="R270">
+<attribute name="NAME" x="40.673" y="4.056" size="1.016" layer="25" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="46.5645" y="17.5565" size="1.016" layer="27" ratio="10" rot="R270"/>
 </element>
 <element name="LEFTSPKR" library="Rembrandt Electronics - JST XH Connectors v1-0" package="JST-XH-02-PACKAGE-LONG-PAD" value="JST-XH-02-PIN-LONG-PAD" x="53.34" y="1.27" smashed="yes">
@@ -790,16 +790,16 @@ design rules under a new name.</description>
 <attribute name="NAME" x="56.896" y="30.734" size="1.27" layer="25" rot="R180"/>
 <attribute name="VALUE" x="53.34" y="32.512" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="J3" library="Rembrandt Electronics - JST XH Connectors v1-0" package="JST-XH-02-PACKAGE-LONG-PAD" value="JST-XH-02-PIN-LONG-PAD" x="78.232" y="15.748" smashed="yes" rot="R90">
-<attribute name="NAME" x="80.272" y="11.493" size="1.016" layer="25" ratio="10" rot="R180"/>
+<element name="5V" library="Rembrandt Electronics - JST XH Connectors v1-0" package="JST-XH-02-PACKAGE-LONG-PAD" value="JST-XH-02-PIN-LONG-PAD" x="78.232" y="15.748" smashed="yes" rot="R90">
+<attribute name="NAME" x="81.471" y="16.772" size="1.016" layer="25" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="74.3395" y="12.4455" size="1.016" layer="27" ratio="10" rot="R90"/>
 </element>
 <element name="R3" library="adafruit" package="M0805" value="1K" x="47.498" y="29.21" smashed="yes" rot="R180">
 <attribute name="NAME" x="45.466" y="29.718" size="1.27" layer="25" rot="R180"/>
 <attribute name="VALUE" x="48.514" y="31.496" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="J2" library="Rembrandt Electronics - JST XH Connectors v1-0" package="JST-XH-04-PACKAGE-LONG-PAD" value="JST-XH-04-PIN-LONG-PAD" x="44.45" y="21.336" smashed="yes" rot="R90">
-<attribute name="NAME" x="46.49" y="14.681" size="1.016" layer="25" ratio="10" rot="R180"/>
+<element name="UART" library="Rembrandt Electronics - JST XH Connectors v1-0" package="JST-XH-04-PACKAGE-LONG-PAD" value="JST-XH-04-PIN-LONG-PAD" x="44.45" y="21.336" smashed="yes" rot="R90">
+<attribute name="NAME" x="39.675" y="19.058" size="1.016" layer="25" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="41.8275" y="17.8735" size="1.016" layer="27" ratio="10" rot="R90"/>
 </element>
 </elements>
@@ -809,11 +809,11 @@ design rules under a new name.</description>
 <contactref element="LEFTSPKR" pad="1"/>
 <contactref element="RIGHTSPKR" pad="1"/>
 <contactref element="LED2" pad="C"/>
-<contactref element="J4" pad="2"/>
+<contactref element="7V-9V" pad="2"/>
 <contactref element="7805" pad="3"/>
 <contactref element="C4" pad="2"/>
 <contactref element="C3" pad="2"/>
-<contactref element="J1" pad="2"/>
+<contactref element="AMPLIFIER" pad="2"/>
 <contactref element="DFPLAYER" pad="7"/>
 <wire x1="71.4756" y1="1.6002" x2="69.8754" y2="1.6002" width="0.6096" layer="1"/>
 <wire x1="71.4756" y1="3.2004" x2="71.4756" y2="1.6002" width="0.6096" layer="16"/>
@@ -847,8 +847,8 @@ design rules under a new name.</description>
 <wire x1="66.678053125" y1="11.383271875" x2="61.341" y2="4.2672" width="0.6096" layer="16"/>
 <wire x1="61.341" y1="1.6002" x2="60.96" y2="1.27" width="0.6096" layer="16"/>
 <via x="71.4756" y="1.6002" extent="1-16" drill="0.35"/>
-<contactref element="J3" pad="2"/>
-<contactref element="J2" pad="1"/>
+<contactref element="5V" pad="2"/>
+<contactref element="UART" pad="1"/>
 <wire x1="44.45" y1="17.526" x2="44.958" y2="17.526" width="0.6096" layer="16"/>
 <wire x1="44.958" y1="17.526" x2="45.72" y2="16.764" width="0.6096" layer="16"/>
 <wire x1="45.72" y1="16.764" x2="45.72" y2="9.652" width="0.6096" layer="16"/>
@@ -868,6 +868,20 @@ design rules under a new name.</description>
 <wire x1="79.8832" y1="11.684" x2="73.0758" y2="11.684" width="0.6096" layer="1"/>
 <wire x1="66.04" y1="11.938" x2="64.135" y2="13.843" width="0.6096" layer="1"/>
 <wire x1="64.135" y1="13.843" x2="64.135" y2="27.2034" width="0.6096" layer="1"/>
+<polygon width="0.6096" layer="1" isolate="1.27">
+<vertex x="39.116" y="33.02"/>
+<vertex x="84.836" y="33.02"/>
+<vertex x="84.836" y="-1.524"/>
+<vertex x="39.116" y="-1.524"/>
+</polygon>
+<polygon width="0.6096" layer="16" isolate="1.27">
+<vertex x="39.624" y="32.512"/>
+<vertex x="84.328" y="32.512"/>
+<vertex x="84.836" y="32.004"/>
+<vertex x="84.836" y="-1.016"/>
+<vertex x="39.116" y="-1.016"/>
+<vertex x="39.116" y="32.512"/>
+</polygon>
 </signal>
 <signal name="VCC">
 <contactref element="DFPLAYER" pad="1"/>
@@ -885,7 +899,7 @@ design rules under a new name.</description>
 <wire x1="69.8754" y1="3.7338" x2="69.53" y2="3.81" width="0.6096" layer="1"/>
 <wire x1="50.8" y1="27.178" x2="50.8" y2="27.0764" width="0.6096" layer="1"/>
 <wire x1="69.8754" y1="4.2672" x2="69.53" y2="3.81" width="0.6096" layer="1"/>
-<contactref element="J3" pad="1"/>
+<contactref element="5V" pad="1"/>
 <wire x1="75.5904" y1="14.478" x2="78.232" y2="14.478" width="0.6096" layer="1"/>
 <wire x1="54.61" y1="23.2664" x2="54.61" y2="15.24" width="0.6096" layer="1"/>
 <wire x1="54.61" y1="15.24" x2="62.23" y2="7.62" width="0.6096" layer="1"/>
@@ -910,7 +924,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$14">
 <contactref element="DFPLAYER" pad="5"/>
-<contactref element="J1" pad="1"/>
+<contactref element="AMPLIFIER" pad="1"/>
 <wire x1="47.4726" y1="16.002" x2="50.546" y2="16.002" width="0.6096" layer="1"/>
 <wire x1="43.2054" y1="11.7348" x2="47.4726" y2="16.002" width="0.6096" layer="1"/>
 <wire x1="50.546" y1="16.002" x2="50.8" y2="17.018" width="0.6096" layer="1"/>
@@ -942,7 +956,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$3">
 <contactref element="7805" pad="1"/>
-<contactref element="J4" pad="1"/>
+<contactref element="7V-9V" pad="1"/>
 <contactref element="C3" pad="1"/>
 <wire x1="73.136" y1="29.21" x2="72.67" y2="28.744" width="0.6096" layer="1"/>
 <wire x1="72.67" y1="28.744" x2="72.67" y2="25.648" width="0.6096" layer="1"/>
@@ -955,14 +969,14 @@ design rules under a new name.</description>
 <contactref element="R2" pad="2"/>
 <wire x1="50.358" y1="31.242" x2="51.374" y2="30.226" width="0.6096" layer="1"/>
 <wire x1="50.358" y1="31.242" x2="45.42515625" y2="31.242" width="0.6096" layer="1"/>
-<contactref element="J2" pad="4"/>
+<contactref element="UART" pad="4"/>
 <wire x1="44.45" y1="25.69484375" x2="44.7548" y2="25.99964375" width="0.6096" layer="1"/>
 <wire x1="44.7548" y1="30.57164375" x2="45.42515625" y2="31.242" width="0.6096" layer="1"/>
 <wire x1="44.7548" y1="25.99964375" x2="44.7548" y2="30.57164375" width="0.6096" layer="1"/>
 <wire x1="44.45" y1="25.69484375" x2="44.45" y2="25.146" width="0.6096" layer="1"/>
 </signal>
 <signal name="N$1">
-<contactref element="J1" pad="3"/>
+<contactref element="AMPLIFIER" pad="3"/>
 <contactref element="DFPLAYER" pad="4"/>
 <wire x1="43.18" y1="6.35" x2="43.434" y2="6.604" width="0.6096" layer="16"/>
 <wire x1="43.434" y1="6.604" x2="46.736" y2="6.604" width="0.6096" layer="16"/>
@@ -972,7 +986,7 @@ design rules under a new name.</description>
 <wire x1="47.752" y1="17.78" x2="49.53" y2="19.558" width="0.6096" layer="16"/>
 </signal>
 <signal name="N$7">
-<contactref element="J2" pad="3"/>
+<contactref element="UART" pad="3"/>
 <contactref element="R3" pad="2"/>
 <wire x1="46.736" y1="28.006" x2="46.548" y2="28.194" width="0.6096" layer="1"/>
 <wire x1="46.548" y1="29.21" x2="46.548" y2="28.194" width="0.6096" layer="1"/>
@@ -981,7 +995,7 @@ design rules under a new name.</description>
 <wire x1="45.974" y1="22.606" x2="44.45" y2="22.606" width="0.6096" layer="1"/>
 </signal>
 <signal name="N$6">
-<contactref element="J2" pad="2"/>
+<contactref element="UART" pad="2"/>
 <contactref element="DFPLAYER" pad="16"/>
 <wire x1="68.58" y1="27.178" x2="66.802" y2="28.956" width="0.6096" layer="16"/>
 <wire x1="66.802" y1="28.956" x2="49.276" y2="28.956" width="0.6096" layer="16"/>
