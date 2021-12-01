@@ -9889,6 +9889,11 @@ Grid 5.00 mm&lt;p&gt;
 <part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="VIN" library="con-wago-500" library_urn="urn:adsk.eagle:library:195" deviceset="W237-102" device="" package3d_urn="urn:adsk.eagle:package:10688/1" value="7V-9v"/>
 <part name="5V" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-02-PIN" device="-LONG-PAD"/>
+<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10K"/>
+<part name="SUPPLY7" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="LED2" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="SML0805" package3d_urn="urn:adsk.eagle:package:15830/1" value="Green"/>
+<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="330E"/>
+<part name="SUPPLY8" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -10008,6 +10013,24 @@ Grid 5.00 mm&lt;p&gt;
 <attribute name="NAME" x="33.02" y="113.538" size="1.524" layer="95"/>
 <attribute name="VALUE" x="29.718" y="115.697" size="1.778" layer="96"/>
 </instance>
+<instance part="R2" gate="G$1" x="134.62" y="60.96" smashed="yes" rot="R90">
+<attribute name="NAME" x="133.1214" y="57.15" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="137.922" y="57.15" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="SUPPLY7" gate="GND" x="134.62" y="53.34" smashed="yes">
+<attribute name="VALUE" x="132.715" y="50.165" size="1.778" layer="96"/>
+</instance>
+<instance part="LED2" gate="G$1" x="134.62" y="78.74" smashed="yes" rot="R180">
+<attribute name="NAME" x="131.064" y="83.312" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="128.905" y="83.312" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="R3" gate="G$1" x="134.62" y="88.9" smashed="yes" rot="R90">
+<attribute name="NAME" x="133.1214" y="85.09" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="137.922" y="85.09" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="SUPPLY8" gate="GND" x="134.62" y="96.52" smashed="yes" rot="R180">
+<attribute name="VALUE" x="136.525" y="99.695" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -10048,6 +10071,14 @@ Grid 5.00 mm&lt;p&gt;
 <wire x1="27.94" y1="91.44" x2="15.24" y2="91.44" width="0.1524" layer="91"/>
 <junction x="15.24" y="91.44"/>
 <pinref part="5V" gate="-2" pin="S"/>
+</segment>
+<segment>
+<pinref part="R2" gate="G$1" pin="1"/>
+<pinref part="SUPPLY7" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R3" gate="G$1" pin="2"/>
+<pinref part="SUPPLY8" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -10162,7 +10193,12 @@ Grid 5.00 mm&lt;p&gt;
 <segment>
 <pinref part="IC2" gate="B" pin="O"/>
 <pinref part="OUTPUT" gate="-1" pin="S"/>
-<wire x1="132.08" y1="66.04" x2="142.24" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="66.04" x2="134.62" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="134.62" y1="66.04" x2="142.24" y2="66.04" width="0.1524" layer="91"/>
+<junction x="134.62" y="66.04"/>
+<pinref part="LED2" gate="G$1" pin="A"/>
+<wire x1="134.62" y1="76.2" x2="134.62" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$12" class="0">
@@ -10180,6 +10216,12 @@ Grid 5.00 mm&lt;p&gt;
 <pinref part="VIN" gate="-1" pin="KL"/>
 <wire x1="-20.32" y1="114.3" x2="-30.48" y2="114.3" width="0.1524" layer="91"/>
 <junction x="-20.32" y="114.3"/>
+</segment>
+</net>
+<net name="N$11" class="0">
+<segment>
+<pinref part="LED2" gate="G$1" pin="C"/>
+<pinref part="R3" gate="G$1" pin="1"/>
 </segment>
 </net>
 </nets>
