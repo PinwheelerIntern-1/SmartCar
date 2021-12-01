@@ -7680,7 +7680,7 @@ Source: http://www.osram.convergy.de/</description>
 <part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="SUPPLY7" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="6V-12V" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="5MM" package3d_urn="urn:adsk.eagle:package:38044/1" value="7V-9V"/>
+<part name="POWER" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="5MM" package3d_urn="urn:adsk.eagle:package:38044/1" value="7V-9V"/>
 <part name="SUPPLY8" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY9" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="RS232RST" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-04-PIN" device="-LONG-PAD" value="Rx tx Reset Gnd"/>
@@ -7731,7 +7731,7 @@ Source: http://www.osram.convergy.de/</description>
 <instance part="SUPPLY7" gate="GND" x="116.84" y="80.01" smashed="yes">
 <attribute name="VALUE" x="114.935" y="76.835" size="1.778" layer="96"/>
 </instance>
-<instance part="6V-12V" gate="G$1" x="45.72" y="116.84" smashed="yes" rot="R270">
+<instance part="POWER" gate="G$1" x="45.72" y="116.84" smashed="yes" rot="R270">
 <attribute name="VALUE" x="40.894" y="119.38" size="1.778" layer="96" font="vector" rot="R270"/>
 <attribute name="NAME" x="43.18" y="119.888" size="1.778" layer="95" font="vector"/>
 </instance>
@@ -7863,7 +7863,7 @@ Source: http://www.osram.convergy.de/</description>
 </segment>
 <segment>
 <pinref part="SUPPLY8" gate="GND" pin="GND"/>
-<pinref part="6V-12V" gate="G$1" pin="2"/>
+<pinref part="POWER" gate="G$1" pin="2"/>
 <wire x1="48.26" y1="107.95" x2="48.26" y2="109.22" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -7986,7 +7986,7 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="N$9" class="0">
 <segment>
-<pinref part="6V-12V" gate="G$1" pin="1"/>
+<pinref part="POWER" gate="G$1" pin="1"/>
 <wire x1="45.72" y1="109.22" x2="38.1" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="109.22" x2="38.1" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="A1" pin="VI"/>

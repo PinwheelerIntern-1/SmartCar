@@ -9,7 +9,7 @@
 <grid distance="40" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="2" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
@@ -182,6 +182,19 @@
 <hole x="83.312" y="49.784" drill="3.048"/>
 <hole x="83.312" y="3.048" drill="3.048"/>
 <hole x="29.464" y="3.048" drill="3.048"/>
+<text x="35.56" y="50.8" size="1.778" layer="25">PINWHEEL ROBOTICS www.pinwheel.in</text>
+<text x="50.8" y="2.032" size="1.778" layer="26" rot="MR90">Designed &amp; Manufacturd by
+Pinwheel Robotics
+17/11/2021
+FutureBot Wi-Fi Shield V1.0 
+</text>
+<text x="27.432" y="5.08" size="1.778" layer="26" rot="MR90">Documentation at
+</text>
+<text x="68.072" y="44.704" size="1.778" layer="26" rot="MR0">care@pinwheel.in
+</text>
+<text x="46.736" y="39.624" size="1.778" layer="25">FutureBot 
+Wi-Fi Shield V1.0 
+</text>
 </plain>
 <libraries>
 <library name="NODEMCU">
@@ -667,7 +680,7 @@ design rules under a new name.</description>
 </autorouter>
 <elements>
 <element name="U$2" library="NODEMCU" package="NODEMCUESP8266" value="NodeMCU-ESP12E" x="59.69" y="24.13" smashed="yes" rot="R180"/>
-<element name="6V-12V" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="SCREWTERMINAL-5MM-2" package3d_urn="urn:adsk.eagle:package:38044/1" value="7V-9V" x="34.29" y="13.97" smashed="yes" rot="R270">
+<element name="POWER" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="SCREWTERMINAL-5MM-2" package3d_urn="urn:adsk.eagle:package:38044/1" value="7V-9V" x="34.29" y="13.97" smashed="yes" rot="R270">
 <attribute name="NAME" x="29.718" y="13.208" size="1.27" layer="25" font="vector" ratio="12" rot="R270"/>
 <attribute name="SF_SKU" value="PRT-08432" x="34.29" y="13.97" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="35.56" y="15.24" size="0.6096" layer="27" font="vector" ratio="20" rot="R270"/>
@@ -735,7 +748,7 @@ design rules under a new name.</description>
 </elements>
 <signals>
 <signal name="GND">
-<contactref element="6V-12V" pad="2"/>
+<contactref element="POWER" pad="2"/>
 <contactref element="U$2" pad="2"/>
 <contactref element="RS232RST" pad="4"/>
 <contactref element="LED3" pad="C"/>
@@ -862,7 +875,7 @@ design rules under a new name.</description>
 <wire x1="73.152" y1="36.576" x2="73.152" y2="27.432" width="0.4572" layer="1"/>
 </signal>
 <signal name="N$9">
-<contactref element="6V-12V" pad="1"/>
+<contactref element="POWER" pad="1"/>
 <contactref element="IC1" pad="1"/>
 <contactref element="C1" pad="1"/>
 <wire x1="39.624" y1="27.432" x2="39.624" y2="17.272" width="0.4572" layer="1"/>
@@ -986,6 +999,10 @@ design rules under a new name.</description>
 </board>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
