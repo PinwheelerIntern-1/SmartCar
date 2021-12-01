@@ -9887,9 +9887,8 @@ Grid 5.00 mm&lt;p&gt;
 <part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="330E"/>
 <part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
-<part name="VIN(7V-9V)" library="con-wago-500" library_urn="urn:adsk.eagle:library:195" deviceset="W237-102" device="" package3d_urn="urn:adsk.eagle:package:10688/1"/>
+<part name="VIN" library="con-wago-500" library_urn="urn:adsk.eagle:library:195" deviceset="W237-102" device="" package3d_urn="urn:adsk.eagle:package:10688/1" value="7V-9v"/>
 <part name="5V" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-02-PIN" device="-LONG-PAD"/>
-<part name="OUTPUT2" library="Rembrandt Electronics - JST XH Connectors v1-0" deviceset="JST-XH-02-PIN" device="-LONG-PAD"/>
 </parts>
 <sheets>
 <sheet>
@@ -9995,24 +9994,17 @@ Grid 5.00 mm&lt;p&gt;
 <instance part="SUPPLY6" gate="G$1" x="17.78" y="116.84" smashed="yes">
 <attribute name="VALUE" x="15.875" y="120.015" size="1.778" layer="96"/>
 </instance>
-<instance part="VIN(7V-9V)" gate="-1" x="-35.56" y="114.3" smashed="yes">
+<instance part="VIN" gate="-1" x="-35.56" y="114.3" smashed="yes">
 <attribute name="NAME" x="-35.56" y="115.189" size="1.778" layer="95" rot="R180"/>
 </instance>
-<instance part="VIN(7V-9V)" gate="-2" x="-35.56" y="109.22" smashed="yes">
+<instance part="VIN" gate="-2" x="-35.56" y="109.22" smashed="yes">
 <attribute name="VALUE" x="-38.1" y="105.537" size="1.778" layer="96"/>
 <attribute name="NAME" x="-35.56" y="110.109" size="1.778" layer="95" rot="R180"/>
 </instance>
 <instance part="5V" gate="-2" x="30.48" y="111.76" smashed="yes">
 <attribute name="NAME" x="33.02" y="110.998" size="1.524" layer="95"/>
 </instance>
-<instance part="5V" gate="-1" x="33.02" y="114.3" smashed="yes">
-<attribute name="NAME" x="35.56" y="113.538" size="1.524" layer="95"/>
-<attribute name="VALUE" x="32.258" y="115.697" size="1.778" layer="96"/>
-</instance>
-<instance part="OUTPUT2" gate="-2" x="30.48" y="111.76" smashed="yes">
-<attribute name="NAME" x="33.02" y="110.998" size="1.524" layer="95"/>
-</instance>
-<instance part="OUTPUT2" gate="-1" x="30.48" y="114.3" smashed="yes">
+<instance part="5V" gate="-1" x="30.48" y="114.3" smashed="yes">
 <attribute name="NAME" x="33.02" y="113.538" size="1.524" layer="95"/>
 <attribute name="VALUE" x="29.718" y="115.697" size="1.778" layer="96"/>
 </instance>
@@ -10049,15 +10041,13 @@ Grid 5.00 mm&lt;p&gt;
 <wire x1="-20.32" y1="86.36" x2="-20.32" y2="88.9" width="0.1524" layer="91"/>
 <junction x="-20.32" y="88.9"/>
 <junction x="2.54" y="88.9"/>
-<pinref part="VIN(7V-9V)" gate="-2" pin="KL"/>
+<pinref part="VIN" gate="-2" pin="KL"/>
 <wire x1="-30.48" y1="109.22" x2="-30.48" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="-30.48" y1="88.9" x2="-20.32" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="5V" gate="-2" pin="S"/>
-<pinref part="OUTPUT2" gate="-2" pin="S"/>
 <wire x1="27.94" y1="111.76" x2="27.94" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="91.44" x2="15.24" y2="91.44" width="0.1524" layer="91"/>
-<junction x="27.94" y="111.76"/>
 <junction x="15.24" y="91.44"/>
+<pinref part="5V" gate="-2" pin="S"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -10081,9 +10071,9 @@ Grid 5.00 mm&lt;p&gt;
 <wire x1="15.24" y1="114.3" x2="15.24" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="114.3" x2="15.24" y2="114.3" width="0.1524" layer="91"/>
 <junction x="15.24" y="114.3"/>
-<pinref part="OUTPUT2" gate="-1" pin="S"/>
 <wire x1="17.78" y1="114.3" x2="27.94" y2="114.3" width="0.1524" layer="91"/>
 <junction x="17.78" y="114.3"/>
+<pinref part="5V" gate="-1" pin="S"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -10187,7 +10177,7 @@ Grid 5.00 mm&lt;p&gt;
 <wire x1="-20.32" y1="99.06" x2="-20.32" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="IC3" gate="A1" pin="VI"/>
 <wire x1="-20.32" y1="114.3" x2="-17.78" y2="114.3" width="0.1524" layer="91"/>
-<pinref part="VIN(7V-9V)" gate="-1" pin="KL"/>
+<pinref part="VIN" gate="-1" pin="KL"/>
 <wire x1="-20.32" y1="114.3" x2="-30.48" y2="114.3" width="0.1524" layer="91"/>
 <junction x="-20.32" y="114.3"/>
 </segment>
