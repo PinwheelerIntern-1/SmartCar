@@ -150,6 +150,19 @@
 <hole x="54.61" y="73.66" drill="3.2"/>
 <hole x="53.34" y="15.24" drill="3.2"/>
 <hole x="3.81" y="15.24" drill="3.2"/>
+<text x="7.62" y="74.93" size="1.778" layer="25">PINWHEEL ROBOTICS www.pinwheel.in</text>
+<text x="31.75" y="35.56" size="1.778" layer="26" rot="MR0">Designed &amp; Manufacturd by
+Pinwheel Robotics
+03/12/2021
+FutureBot
+NanoShield V1.0</text>
+<text x="33.02" y="27.94" size="1.778" layer="26" rot="MR0">care@pinwheel.in
+</text>
+<text x="36.83" y="72.39" size="1.778" layer="26" rot="MR0">Documentation at
+www.pinwheel.in</text>
+<text x="11.43" y="40.64" size="1.778" layer="25">FutureBot
+NanoShield V1.0 
+</text>
 </plain>
 <libraries>
 <library name="Rembrandt Electronics - JST XH Connectors v1-0">
@@ -1473,6 +1486,10 @@ design rules under a new name.</description>
 </board>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
