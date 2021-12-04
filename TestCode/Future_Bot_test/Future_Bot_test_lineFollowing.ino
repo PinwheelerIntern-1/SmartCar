@@ -23,6 +23,8 @@
 #define NETWORK_DISCONNECTED_AUDIO 12
 #define MUSIC_JINGLE_AUDIO_ID 13
 #define MUSIC_CARAVAN_AUDIO_ID 14
+#define LEFT 1
+#define RIGHT 0
 
 #define AUDIO_FILE1 14
 #define AUDIO_FILE2 15
@@ -40,12 +42,43 @@ short leftMotorSpeed = 800;
 short rightMotorSpeed = 800;
 short spinSpeed = 800;
 short batteryLow=30;
-
+int data;
 uint8_t LeftMotorSlaveId = 1;   //Slave ID of LEFT Drive
 uint8_t RightMotorSlaveId = 1;   //Slave ID of RIGHT Drive
 // How many NeoPixels are attached to the Arduino?
 int NeoPixelLedCount = 32;
+//char data = 0;
+int sensorWeight = 0;
+int countofLineColor = 0;
+int countOfLeftLineColor = 0;
+int countOfRightLineColor = 0;
+int totalNumberOfSensor=8;
+short int markerCount;
+short int desiredCount;
+int noLineConfirmationCounter=10;
 
+
+short minSpeed = 0;
+short maxSpeed = 1000;
+
+int spinDirection=LEFT;
+float speedFactor = .3;
+
+
+float Kp = 0.045;
+float Ki = 0;
+float Kd = 5;
+float error = 0, P = 0, I = 0, D = 0, PIDvalue = 0;
+float previousError = 0, previousI = 0;
+
+boolean audioPlaying = false;
+boolean isObstacle=false;
+bool pause=false;
+bool PreviousStateMarker
+
+float voltage = 0;
+float dsp = 1;
+void setup()
 DFRobotDFPlayerMini DFPlayerObject;
 ModbusMaster modbusMasterLeftMotorNode;                     
 ModbusMaster modbusMasterRightMotorNode;
@@ -62,7 +95,7 @@ SoftwareSerial LineSensorSerial(11,12);//(Rx,Tx)
 int runningSpeed = 0;
 char data_NodeMCU;
 char data_LineSensor;
-bool isObstacle=false;
+
 bool isAudioPlaying=false;
 
 
@@ -163,6 +196,7 @@ void loop()
       DFPlayerObject.play(GOING_FORWARD_AUDIO_ID);
       NeoPixelSolidGreen();
       ForwardTheBot(); 
+      desiredCount++;
       
       break;
 
@@ -224,36 +258,36 @@ void loop()
       NeoPixelEyeBlink();
      
       break;
-	 
-	  case '1': 
+   
+    case '1': 
       DFPlayerObject.play(AUDIO_FILE1);
       NeoPixelEyeBlink();
       break;
-	  case '2': 
+    case '2': 
       DFPlayerObject.play(AUDIO_FILE2);
       NeoPixelEyeBlink();
       break;
-	  case '3': 
+    case '3': 
       DFPlayerObject.play(AUDIO_FILE3);
       NeoPixelEyeBlink();
       break;
-	  case '4': 
+    case '4': 
       DFPlayerObject.play(AUDIO_FILE4);
       NeoPixelEyeBlink();
       break;
-	  case '5': 
+    case '5': 
       DFPlayerObject.play(AUDIO_FILE5);
       NeoPixelEyeBlink();
       break;
-	  case '6': 
+    case '6': 
       DFPlayerObject.play(AUDIO_FILE6);
       NeoPixelEyeBlink();
       break;
-	  case '7': 
+    case '7': 
       DFPlayerObject.play(AUDIO_FILE7);
       NeoPixelEyeBlink();
       break;
-	  case '8': 
+    case '8': 
       DFPlayerObject.play(AUDIO_FILE8);
       NeoPixelEyeBlink();
       break;
@@ -266,6 +300,104 @@ void loop()
    data_NodeMCU='0'; 
    delay(10);
  }
+ if (markerCount<desiredCount){
+  readSensorData();
+  act();
+ }
+ else if(markerCount==desiredCount){
+  //
+    markerCount=0;
+    desiredCount=0;
+    StopTheBot();
+    
+ }
+}
+
+void readSensorData(){
+  if(LineSensorSerial.available()){
+    data=LineSensorSerial.parseInt(); //data=(sensorWeight / countofLineColor);
+    //Serial.println(data);
+    
+  }
+  error = (((totalNumberOfSensor+1)*1000)/2) - data;
+}
+
+void act(){
+
+  if (data==0){
+    spinRobot(521,521);
+  }
+  else if(data>0){
+    if(PreviousStateMarker){
+      PreviousStateMarker=false;
+      markerCount++;
+    }
+        motor_go(0, 0);
+        ForwardTheBot();
+        calculatePID();
+        motorPIDcontrol();
+  }
+ else if(data==36000){
+  PreviousStateMarker=true;
+ }
+ else if(pause){   //pause if a boolean which can be set using data from ESP or whatever means
+  StopTheBot();
+ }
+ data=-1;
+}
+
+void motor_go(int leftMotorRPM, int rightMotorRPM)
+{
+  modbusMasterLeftMotorNode.Set_Speed(leftMotorSlaveId, leftMotorRPM * speedFactor  ); // Set Speed, speed range is (0-1000 RPM)
+  modbusMasterRightMotorNode.Set_Speed(rightMotorSlaveId, rightMotorRPM * speedFactor ); // Set Speed, speed range is (0-1000 RPM)
+  //Serial.print(rpm1);
+  //Serial.print(" : ");
+  //Serial.println(rpm);
+}
+void calculatePID()
+{
+  P = error;
+  I = I + error;
+  D = error - previousError;
+
+  PIDvalue = (Kp * P) + (Ki * I) + (Kd * D);
+  previousError = error;
+}
+
+void motorPIDcontrol()
+{
+  //on negative PID Turn Right
+  int leftMotorSpeed = (maxSpeed / 2) - PIDvalue;
+  int rightMotorSpeed = (maxSpeed / 2) + PIDvalue;
+
+  leftMotorSpeed = constrain(leftMotorSpeed, minSpeed, maxSpeed);
+  rightMotorSpeed = constrain(rightMotorSpeed, minSpeed, maxSpeed);
+  float tpd = .8;
+  if (error >= 4300)
+  {
+    modbusMasterLeftMotorNode.Run_Motor(leftMotorSlaveId, 515); // CCW-521, stop-512, brake-515, CW-513BRK
+    modbusMasterRightMotorNode.Run_Motor(rightMotorSlaveId, 521); // CCW-521, stop-512, brake-515, CW-513
+    motor_go(leftMotorSpeed, rightMotorSpeed * tpd);
+  }
+  else if (error <= -4300)
+  {
+    modbusMasterLeftMotorNode.Run_Motor(leftMotorSlaveId, 513); // CCW-521, stop-512, brake-515, CW-513
+    modbusMasterRightMotorNode.Run_Motor(rightMotorSlaveId, 515); // CCW-521, stop-512, brake-515, CW-513BRK
+    motor_go(leftMotorSpeed * tpd, rightMotorSpeed);
+  }
+  else
+  {
+    if (speedFactor < 1)
+    {
+      motor_go(leftMotorSpeed, rightMotorSpeed);
+      speedFactor += 0.01;
+    }
+    else
+    {
+      motor_go(leftMotorSpeed, rightMotorSpeed);
+    }
+
+  }
 }
 
 
@@ -516,24 +648,24 @@ void NeoPixelDancing()
 
 void NeoPixelEyeBlink()
 {
-	for(int k=0;k<2;k++)
-	{
-	  for (int i=0;i<NeoPixelLedCount/4;i++)
-	  {
-	   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(200,200,0));
-		ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(200,200,0));
-	  }
-		 ringLedNeoPixels.show();
-		 delay(500);
-		 for (int i=0;i<NeoPixelLedCount/4;i++)
-	  {
-	   ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(0,0,0));
-	   ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(0,0,0));
-	   
-	  }
-	   ringLedNeoPixels.show();
-		 delay(500);
-	}
+  for(int k=0;k<2;k++)
+  {
+    for (int i=0;i<NeoPixelLedCount/4;i++)
+    {
+     ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(200,200,0));
+    ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(200,200,0));
+    }
+     ringLedNeoPixels.show();
+     delay(500);
+     for (int i=0;i<NeoPixelLedCount/4;i++)
+    {
+     ringLedNeoPixels.setPixelColor(i,  ringLedNeoPixels.Color(0,0,0));
+     ringLedNeoPixels.setPixelColor((NeoPixelLedCount/2)+i,  ringLedNeoPixels.Color(0,0,0));
+     
+    }
+     ringLedNeoPixels.show();
+     delay(500);
+  }
 }
 
 bool GetBatteryVoltage() {
